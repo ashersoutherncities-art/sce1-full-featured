@@ -340,29 +340,29 @@
     /* Center hamburger on mobile */
     @media (max-width: 968px) {
         .header-container {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            grid-template-areas: "logo hamburger cta";
         }
         
         .header-logo {
-            flex: 0 0 auto;
+            grid-area: logo;
+            justify-self: start;
         }
         
         .mobile-toggle {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
+            grid-area: hamburger;
+            justify-self: center;
+            display: flex;
         }
         
         .header-nav {
-            display: none;
+            grid-column: 1 / -1;
         }
         
         .nav-cta-wrapper {
-            flex: 0 0 auto;
-            margin-left: auto;
+            grid-area: cta;
+            justify-self: end;
         }
     }
 </style>
