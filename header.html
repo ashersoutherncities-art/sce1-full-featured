@@ -331,9 +331,7 @@
 
     @media (max-width: 768px) {
         .header-container {
-            padding: 0 1rem;
             height: 70px;
-            gap: 0.75rem;
         }
 
         .header-logo img {
@@ -352,12 +350,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            padding: 0 1rem;
             position: relative;
         }
         
         .header-logo {
             flex-shrink: 0;
+            z-index: 2;
         }
         
         .mobile-toggle {
@@ -365,6 +364,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 1;
         }
         
         .header-nav {
@@ -376,6 +376,7 @@
         
         .nav-cta-wrapper {
             flex-shrink: 0;
+            z-index: 2;
         }
     }
 </style>
