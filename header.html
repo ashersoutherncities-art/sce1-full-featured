@@ -371,18 +371,21 @@
         document.body.style.overflow = headerNav.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Mobile dropdown toggle
-    if (window.innerWidth <= 968) {
-        [companyDropdown, resourcesDropdown].forEach(dropdown => {
-            if (dropdown) {
-                dropdown.addEventListener('click', function(e) {
-                    if (e.target.classList.contains('dropdown-toggle')) {
-                        this.classList.toggle('mobile-open');
+    // Mobile dropdown toggle - always attach, CSS handles visibility
+    [companyDropdown, resourcesDropdown].forEach(dropdown => {
+        if (dropdown) {
+            const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+            if (dropdownToggle) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    // Only toggle on mobile (viewport check)
+                    if (window.innerWidth <= 968) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('mobile-open');
                     }
                 });
             }
-        });
-    }
+        }
+    });
 
     // Active page highlighting
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
