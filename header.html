@@ -1,5 +1,5 @@
 <!-- SOUTHERN CITIES ENTERPRISES - GLOBAL HEADER -->
-<!-- Clean, modern navigation with dropdown support -->
+<!-- Compact navigation with dropdown consolidation -->
 
 <style>
     /* Header Styles */
@@ -42,7 +42,7 @@
     .header-nav {
         display: flex;
         align-items: center;
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .nav-menu {
@@ -50,7 +50,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        gap: 2.5rem;
+        gap: 2rem;
         align-items: center;
     }
 
@@ -312,31 +312,31 @@
                     <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="services.html" class="nav-link nav-link-prominent">Investor Services</a>
                 </li>
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link">Investor Services</a>
-                </li>
-                <li class="nav-item has-dropdown" id="servicesDropdown">
-                    <span class="nav-link dropdown-toggle">Divisions</span>
+                <li class="nav-item has-dropdown" id="companyDropdown">
+                    <span class="nav-link dropdown-toggle">Company</span>
                     <div class="dropdown-menu">
+                        <a href="index.html#about">About</a>
                         <a href="general-contracting.html">General Contracting</a>
                         <a href="acquisitions.html">Acquisitions</a>
                         <a href="brokerage.html">Brokerage</a>
                         <a href="development.html">Development</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="education.html" class="nav-link">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a href="blog.html" class="nav-link">Blog</a>
+                <li class="nav-item has-dropdown" id="resourcesDropdown">
+                    <span class="nav-link dropdown-toggle">Resources</span>
+                    <div class="dropdown-menu">
+                        <a href="education.html">Education</a>
+                        <a href="community.html">Community</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <a href="services.html" class="cta-button">Investor Services</a>
+            <a href="services.html" class="cta-button">Get Started</a>
         </nav>
 
         <!-- Mobile Toggle -->
@@ -352,7 +352,8 @@
     // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const headerNav = document.getElementById('headerNav');
-    const servicesDropdown = document.getElementById('servicesDropdown');
+    const companyDropdown = document.getElementById('companyDropdown');
+    const resourcesDropdown = document.getElementById('resourcesDropdown');
 
     mobileToggle.addEventListener('click', function() {
         this.classList.toggle('active');
@@ -362,16 +363,20 @@
 
     // Mobile dropdown toggle
     if (window.innerWidth <= 968) {
-        servicesDropdown.addEventListener('click', function(e) {
-            if (e.target.classList.contains('dropdown-toggle')) {
-                this.classList.toggle('mobile-open');
+        [companyDropdown, resourcesDropdown].forEach(dropdown => {
+            if (dropdown) {
+                dropdown.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('dropdown-toggle')) {
+                        this.classList.toggle('mobile-open');
+                    }
+                });
             }
         });
     }
 
     // Active page highlighting
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
     
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
@@ -382,10 +387,18 @@
         }
     });
 
-    // Highlight Services dropdown if on a service page
-    const servicePages = ['general-contracting.html', 'acquisitions.html', 'brokerage.html', 'development.html', 'services.html'];
-    if (servicePages.includes(currentPage)) {
-        document.querySelector('.dropdown-toggle').classList.add('active');
+    // Highlight dropdowns if on their sub-pages
+    const companyPages = ['general-contracting.html', 'acquisitions.html', 'brokerage.html', 'development.html'];
+    const resourcePages = ['education.html', 'community.html', 'blog.html'];
+    
+    if (companyPages.includes(currentPage)) {
+        const companyToggle = document.querySelector('#companyDropdown .dropdown-toggle');
+        if (companyToggle) companyToggle.classList.add('active');
+    }
+    
+    if (resourcePages.includes(currentPage)) {
+        const resourcesToggle = document.querySelector('#resourcesDropdown .dropdown-toggle');
+        if (resourcesToggle) resourcesToggle.classList.add('active');
     }
 
     // Close mobile menu when clicking outside
