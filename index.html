@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Southern Cities Enterprises | Vertically Integrated Real Estate Solutions</title>
-    <meta name="description" content="Southern Cities Enterprises - A vertically integrated real estate and financial ecosystem specializing in general contracting, acquisitions, brokerage, and development.">
+    <title>Southern Cities Enterprises | Real Estate & Construction Experts</title>
+    <meta name="description" content="Southern Cities Enterprises - Construction, Brokerage, Investor Services, and Development solutions across the Southeast.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,276 +13,600 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .section-spacing {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
         }
         .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item {
+            cursor: pointer;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-white">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-gray-900">Southern Cities Enterprises</h1>
+                    <h1 class="text-xl font-bold text-gray-900">Southern Cities Enterprises</h1>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#services" class="text-gray-700 hover:text-indigo-600 font-medium">Services</a>
-                    <a href="#divisions" class="text-gray-700 hover:text-indigo-600 font-medium">Divisions</a>
-                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
+                    <a href="#divisions" class="text-gray-700 hover:text-blue-600 font-medium transition">Divisions</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium transition">Testimonials</a>
+                    <a href="#faq" class="text-gray-700 hover:text-blue-600 font-medium transition">FAQ</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
+    <section class="bg-gradient-to-br from-slate-800 to-slate-900 text-white py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-5xl md:text-6xl font-bold mb-6">Vertically Integrated Real Estate Solutions</h2>
-            <p class="text-xl md:text-2xl mb-8 text-indigo-100 max-w-3xl mx-auto">
-                Building a dominant platform that connects investors, landowners, and buyers through comprehensive real estate and financial services.
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Construction • Brokerage • Investor Services • Development
+            </h2>
+            <p class="text-xl md:text-2xl mb-4 text-slate-200 max-w-3xl mx-auto font-semibold">
+                A Unified Real Estate AND Development Enterprise
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                    Get Started
-                </a>
-                <a href="#divisions" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition">
-                    Our Services
-                </a>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+                Where Real Estate opportunities are identified, built, and maximized.
+            </p>
+        </div>
+    </section>
+
+    <!-- Process Flow -->
+    <section class="section-spacing bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- PLAN -->
+                <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-200 card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">PLAN</h3>
+                    <p class="text-gray-600">We assess market fundamentals and scope before execution.</p>
+                </div>
+
+                <!-- EXECUTE -->
+                <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-200 card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">EXECUTE</h3>
+                    <p class="text-gray-600">Integrated teams align construction, brokerage, operations.</p>
+                </div>
+
+                <!-- OPTIMIZE -->
+                <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-200 card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">OPTIMIZE</h3>
+                    <p class="text-gray-600">Assets are positioned for maximum long-term value or strategic exit.</p>
+                </div>
+
+                <!-- COMPLY -->
+                <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-200 card-hover">
+                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">COMPLY</h3>
+                    <p class="text-gray-600">Licensed, insured, and compliant execution across all divisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="section-spacing bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Who We Are</h3>
+                <h4 class="text-2xl font-semibold text-gray-800 mb-6">
+                    Construction. Brokerage. Investment. Development.
+                </h4>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Southern Cities Enterprises is a full-stack real estate company providing construction, brokerage, investor services, and development solutions across the Southeast. Our vertically integrated approach allows us to manage projects efficiently from acquisition and renovation to disposition and long-term ownership.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    We work with homebuyers, sellers, investors, and land owners, whether experienced or navigating real estate for the first time to identify opportunities, unlock hidden values and execute with precision.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Divisions Section -->
-    <section id="divisions" class="py-20 bg-white">
+    <section id="divisions" class="section-spacing bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Our Divisions</h3>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Four specialized divisions working together to deliver comprehensive real estate solutions.
-                </p>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">SOUTHERN CITIES ENTERPRISE DIVISIONS</h3>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- General Contracting -->
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 card-hover border border-blue-100">
-                    <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg>
+            <!-- Construction -->
+            <div class="mb-16">
+                <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-200">
+                    <div class="flex items-start mb-6">
+                        <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-6 flex-1">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-4">Integrated Construction Solutions</h4>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Southern Cities provides licensed general contracting services for residential, investment, and development projects. Our team delivers renovations, additions, and structural work with clear scopes, disciplined timelines, and hands-on oversight.
+                            </p>
+                            <ul class="grid md:grid-cols-2 gap-3">
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-blue-600 mr-2 mt-1">✓</span>
+                                    <span>Full renovations & remodels</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-blue-600 mr-2 mt-1">✓</span>
+                                    <span>Additions & expansions</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-blue-600 mr-2 mt-1">✓</span>
+                                    <span>Structural & framing work</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-blue-600 mr-2 mt-1">✓</span>
+                                    <span>Investor rehab projects</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-blue-600 mr-2 mt-1">✓</span>
+                                    <span>Pre-construction planning</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <h4 class="text-2xl font-bold text-gray-900 mb-4">General Contracting</h4>
-                    <p class="text-gray-700 mb-4">
-                        Professional subcontractor management for construction projects. We handle estimation, coordination, and execution across multiple active jobs.
-                    </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="text-indigo-600 mr-2">✓</span>
-                            <span>Subcontractor Management</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-indigo-600 mr-2">✓</span>
-                            <span>Project Estimation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-indigo-600 mr-2">✓</span>
-                            <span>Multi-Job Coordination</span>
-                        </li>
-                    </ul>
                 </div>
+            </div>
 
-                <!-- Acquisitions -->
-                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 card-hover border border-green-100">
-                    <div class="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
+            <!-- Brokerage -->
+            <div class="mb-16">
+                <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-200">
+                    <div class="flex items-start mb-6">
+                        <div class="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-6 flex-1">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-4">Real Estate Brokerage Focused on Value</h4>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                We provide professional real estate brokerage services focused on buying, selling, and value optimization. We represent homeowners, investors, and partners using a strategy-driven approach designed to maximize outcomes.
+                            </p>
+                            <ul class="grid md:grid-cols-2 gap-3">
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-green-600 mr-2 mt-1">✓</span>
+                                    <span>Buyer representation</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-green-600 mr-2 mt-1">✓</span>
+                                    <span>Seller representation</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-green-600 mr-2 mt-1">✓</span>
+                                    <span>Fix-Before-You-Sell strategies</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-green-600 mr-2 mt-1">✓</span>
+                                    <span>Investor acquisition support</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-green-600 mr-2 mt-1">✓</span>
+                                    <span>Market analysis & pricing strategy</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <h4 class="text-2xl font-bold text-gray-900 mb-4">Acquisitions & Deal Sourcing</h4>
-                    <p class="text-gray-700 mb-4">
-                        Strategic property acquisition targeting rehabs at 30-50% ARV and land at ≤20% as-built value through multiple sourcing channels.
-                    </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            <span>Pre-foreclosure Lead Generation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            <span>Deal Analysis & Modeling</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            <span>Multi-Channel Sourcing</span>
-                        </li>
-                    </ul>
                 </div>
+            </div>
 
-                <!-- Brokerage -->
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 card-hover border border-purple-100">
-                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                        </svg>
+            <!-- Investor Services -->
+            <div class="mb-16">
+                <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-200">
+                    <div class="flex items-start mb-6">
+                        <div class="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-6 flex-1">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-4">Integrated Support for Real Estate Investors</h4>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Southern Cities supports real estate investors through construction coordination, brokerage representation, and strategic guidance. Our investor services are designed to help clients evaluate opportunities, execute projects efficiently, and manage risk.
+                            </p>
+                            <ul class="grid md:grid-cols-2 gap-3">
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-purple-600 mr-2 mt-1">✓</span>
+                                    <span>Investor-focused construction support</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-purple-600 mr-2 mt-1">✓</span>
+                                    <span>Investor brokerage representation</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-purple-600 mr-2 mt-1">✓</span>
+                                    <span>Deal evaluation & strategy support</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-purple-600 mr-2 mt-1">✓</span>
+                                    <span>BRRRR strategy guidance</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-purple-600 mr-2 mt-1">✓</span>
+                                    <span>Partnerships & referrals</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <h4 class="text-2xl font-bold text-gray-900 mb-4">Brokerage</h4>
-                    <p class="text-gray-700 mb-4">
-                        Licensed real estate brokerage services providing expert guidance for buyers, sellers, and investors in residential and commercial markets.
-                    </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="text-purple-600 mr-2">✓</span>
-                            <span>Residential & Commercial Sales</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-purple-600 mr-2">✓</span>
-                            <span>Investment Property Analysis</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-purple-600 mr-2">✓</span>
-                            <span>Market Expertise</span>
-                        </li>
-                    </ul>
                 </div>
+            </div>
 
-                <!-- Development -->
-                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-8 card-hover border border-orange-100">
-                    <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
+            <!-- Development -->
+            <div class="mb-0">
+                <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-200">
+                    <div class="flex items-start mb-6">
+                        <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-6 flex-1">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-4">Strategic Real Estate Development</h4>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                We develop residential and mixed-use projects through disciplined planning, strategic partnerships, and hands-on execution. We collaborate with landowners, investors, and municipalities to evaluate feasibility and deliver projects aligned with long-term market fundamentals.
+                            </p>
+                            <ul class="grid md:grid-cols-2 gap-3">
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-slate-700 mr-2 mt-1">✓</span>
+                                    <span>Land acquisition & feasibility analysis</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-slate-700 mr-2 mt-1">✓</span>
+                                    <span>Ground-up residential development</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-slate-700 mr-2 mt-1">✓</span>
+                                    <span>Mixed-use projects</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-slate-700 mr-2 mt-1">✓</span>
+                                    <span>Joint venture partnerships</span>
+                                </li>
+                                <li class="flex items-start text-gray-700">
+                                    <span class="text-slate-700 mr-2 mt-1">✓</span>
+                                    <span>Project oversight & execution</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <h4 class="text-2xl font-bold text-gray-900 mb-4">Development</h4>
-                    <p class="text-gray-700 mb-4">
-                        Ground-up construction and comprehensive rehab projects, transforming properties from concept to completion with full vertical integration.
-                    </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="text-orange-600 mr-2">✓</span>
-                            <span>Ground-Up Construction</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange-600 mr-2">✓</span>
-                            <span>Property Rehabilitation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange-600 mr-2">✓</span>
-                            <span>Project Management</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section id="services" class="py-20 bg-gray-50">
+    <!-- Testimonials -->
+    <section id="testimonials" class="section-spacing bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Why Choose Southern Cities</h3>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    A fully integrated platform delivering scalable real estate solutions across the entire value chain.
-                </p>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients and Partners Say</h3>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400 text-xl">★ ★ ★ ★ ★</span>
                     </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-2">Vertical Integration</h4>
-                    <p class="text-gray-600">Complete control from acquisition to development, ensuring quality and efficiency at every step.</p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Southern Cities Enterprise helped us plan renovations before listing our home. Their coordinated approach made the process smoother and helped us feel confident in every decision."
+                    </p>
+                    <div>
+                        <p class="font-semibold text-gray-900">Michael R.</p>
+                        <p class="text-sm text-gray-600">Homeowner</p>
+                    </div>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                        </svg>
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400 text-xl">★ ★ ★ ★ ★</span>
                     </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-2">Data-Driven</h4>
-                    <p class="text-gray-600">Advanced deal modeling and analysis to ensure profitable investments and smart decision-making.</p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Working with a team that understands construction, brokerage, and investor strategy made a huge difference. Communication was clear, and timelines were realistic."
+                    </p>
+                    <div>
+                        <p class="font-semibold text-gray-900">Daniel C.</p>
+                        <p class="text-sm text-gray-600">Real Estate Investor</p>
+                    </div>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400 text-xl">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Southern Cities brings a disciplined, thoughtful approach to development. Their ability to evaluate feasibility and manage execution sets them apart."
+                    </p>
+                    <div>
+                        <p class="font-semibold text-gray-900">Anthony M.</p>
+                        <p class="text-sm text-gray-600">Development Partner</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400 text-xl">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "The team took the time to explain our options and develop a strategy instead of rushing the transaction. That level of planning really mattered."
+                    </p>
+                    <div>
+                        <p class="font-semibold text-gray-900">Laura B.</p>
+                        <p class="text-sm text-gray-600">Brokerage Client</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400 text-xl">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "They were transparent, professional, and easy to work with. The process felt structured and well-managed from start to finish."
+                    </p>
+                    <div>
+                        <p class="font-semibold text-gray-900">James P.</p>
+                        <p class="text-sm text-gray-600">Landowner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-spacing bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-gray-900 pr-4">What does Southern Cities Enterprises do?</h4>
+                        <svg class="faq-icon w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-2">Scalable Systems</h4>
-                    <p class="text-gray-600">Standardized processes and platforms built for growth and operational excellence.</p>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            Southern Cities Enterprises is a vertically integrated real estate company offering construction, brokerage, investor services, and development solutions. We help clients identify opportunities, execute projects, and maximize value across the entire real estate lifecycle.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-gray-900 pr-4">Do you work with homeowners, investors, or partners?</h4>
+                        <svg class="faq-icon w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            We work with all three. Whether you're a homeowner looking to sell or renovate, an investor evaluating deals, or a partner exploring development opportunities, we provide tailored services to meet your needs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-gray-900 pr-4">Are your services provided by licensed professionals?</h4>
+                        <svg class="faq-icon w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            Yes. Our team includes licensed general contractors, real estate brokers, and experienced professionals. We maintain proper insurance, licensing, and compliance across all divisions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-gray-900 pr-4">Do you offer construction and brokerage services together?</h4>
+                        <svg class="faq-icon w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            Yes. Our integrated approach allows us to coordinate construction and brokerage seamlessly. This is especially valuable for fix-before-you-sell strategies, investor projects, and development deals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-gray-900 pr-4">Do you develop your own projects or partner with others?</h4>
+                        <svg class="faq-icon w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            Both. We develop our own projects and also collaborate with landowners, investors, and partners through joint ventures and strategic partnerships.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-gray-900 pr-4">Do you guarantee investment returns or outcomes?</h4>
+                        <svg class="faq-icon w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            No. Real estate involves inherent risk, and we do not guarantee returns or specific outcomes. Our role is to provide strategic guidance, disciplined execution, and risk management support.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-gray-900 pr-4">How do I know which division is right for my needs?</h4>
+                        <svg class="faq-icon w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            Contact us to discuss your goals. We'll evaluate your situation and recommend the best approach, whether that's a single service or a combination of divisions working together.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="p-6 flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-gray-900 pr-4">How do I get started?</h4>
+                        <svg class="faq-icon w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            Reach out through our contact form or email us directly. We'll schedule a conversation to understand your needs and determine how we can help.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="section-spacing bg-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="text-4xl font-bold text-gray-900 mb-4">Let's Work Together</h3>
-            <p class="text-xl text-gray-600 mb-8">
-                Whether you're an investor, landowner, or looking for real estate services, we're here to help build your vision.
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Contact Now</h3>
+            <p class="text-lg text-gray-700 mb-12 leading-relaxed">
+                Southern Cities Enterprises provides integrated real estate solutions through construction, brokerage, investor services, and development expertise. Contact us today!
             </p>
-            <div class="bg-gray-50 rounded-xl p-8">
-                <p class="text-lg text-gray-700 mb-4">
-                    <strong>Southern Cities Enterprises</strong><br>
-                    Charlotte, NC
+            <div class="bg-gray-50 rounded-xl p-10 border border-gray-200">
+                <h4 class="text-xl font-bold text-gray-900 mb-6">Office Location</h4>
+                <p class="text-lg text-gray-700 mb-8">
+                    5231 Grays Ridge Dr, Charlotte NC 28269
                 </p>
-                <a href="mailto:dariuswalton906@gmail.com" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-                    Contact Us
+                <a href="mailto:dariuswalton906@gmail.com" class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-semibold hover:bg-blue-700 transition text-lg">
+                    Email Us
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-slate-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div class="grid md:grid-cols-4 gap-10 mb-8">
                 <div>
                     <h5 class="font-bold text-lg mb-4">Southern Cities Enterprises</h5>
-                    <p class="text-gray-400">Vertically integrated real estate solutions.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Construction, Brokerage, Investor Services, and Development solutions across the Southeast.
+                    </p>
                 </div>
                 <div>
-                    <h6 class="font-semibold mb-4">Divisions</h6>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>General Contracting</li>
-                        <li>Acquisitions</li>
+                    <h6 class="font-semibold mb-4 text-slate-300">Our Divisions</h6>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>Construction</li>
                         <li>Brokerage</li>
+                        <li>Investor Services</li>
                         <li>Development</li>
                     </ul>
                 </div>
                 <div>
-                    <h6 class="font-semibold mb-4">Services</h6>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Project Management</li>
-                        <li>Deal Sourcing</li>
-                        <li>Property Analysis</li>
-                        <li>Construction</li>
+                    <h6 class="font-semibold mb-4 text-slate-300">Latest Blogs</h6>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>The solution to your Roof problems</li>
+                        <li>Construction: Building the Foundation</li>
                     </ul>
                 </div>
                 <div>
-                    <h6 class="font-semibold mb-4">Contact</h6>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Charlotte, NC</li>
-                        <li><a href="mailto:dariuswalton906@gmail.com" class="hover:text-white">Email Us</a></li>
+                    <h6 class="font-semibold mb-4 text-slate-300">Office Info</h6>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>5231 Grays Ridge Dr</li>
+                        <li>Charlotte, NC 28269</li>
+                        <li class="pt-2">
+                            <a href="mailto:dariuswalton906@gmail.com" class="hover:text-white transition">Email Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2026 Southern Cities Enterprises. All rights reserved.</p>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-400 text-sm">
+                <p>&copy; 2025 Southern Cities Enterprise - All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // FAQ Toggle functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const header = item.querySelector('.p-6');
+            header.addEventListener('click', () => {
+                // Close other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
