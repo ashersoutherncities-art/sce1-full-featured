@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Consulting Services | Southern Cities Enterprises</title>
+    <meta name="description" content="Scale your real estate business with expert consulting. Proven systems for acquisitions, construction, and operations.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --red: #E63A27;
+            --green: #28a745;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 5rem 5% 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero .roi-badge {
+            background: var(--green);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .hero .stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--orange);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background: var(--orange);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .quiz-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-quiz {
+            background: white;
+            color: var(--orange);
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-quiz:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Retainer Packages Section */
+        .retainer-section {
+            padding: 4rem 5%;
+            background: var(--light-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .section-header .subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge.green {
+            background: var(--green);
+        }
+
+        .badge.red {
+            background: var(--red);
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 3px solid transparent;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--orange);
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(250, 140, 65, 0.3);
+        }
+
+        .pricing-card.premium {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 50px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-8px) scale(1.07);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--orange);
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scarcity-badge {
+            background: var(--red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .card-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card.premium .card-header h3 {
+            color: white;
+        }
+
+        .card-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card.premium .card-description {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .price-wrapper {
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            border-top: 2px solid var(--light-bg);
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        .pricing-card.premium .price-wrapper {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--orange);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-card.premium .price {
+            color: var(--orange);
+        }
+
+        .price-period {
+            font-size: 1.2rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .pricing-card.premium .price-period {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .price-detail {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        .pricing-card.premium .price-detail {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .savings-badge {
+            background: var(--green);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features-list li {
+            padding: 0.75rem 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--light-bg);
+        }
+
+        .pricing-card.premium .features-list li {
+            border-color: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.95);
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: var(--green);
+            font-weight: 700;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .btn-cta {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn-cta:hover {
+            background: var(--navy);
+            transform: scale(1.02);
+        }
+
+        .pricing-card.premium .btn-cta {
+            background: white;
+            color: var(--navy);
+        }
+
+        .pricing-card.premium .btn-cta:hover {
+            background: var(--orange);
+            color: white;
+        }
+
+        /* One-Time Consulting */
+        .onetime-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .service-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--orange);
+            margin: 1rem 0;
+        }
+
+        .service-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .service-features li:before {
+            content: "→";
+            color: var(--orange);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .btn-contact {
+            background: var(--navy);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-contact:hover {
+            background: var(--orange);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            padding: 4rem 5%;
+            background: var(--light-bg);
+        }
+
+        .comparison-table {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: var(--navy);
+            color: white;
+            padding: 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--light-bg);
+            align-items: center;
+        }
+
+        .table-row:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .feature-name {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .check {
+            color: var(--green);
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .cross {
+            color: var(--gray);
+            font-size: 1.2rem;
+            text-align: center;
+            opacity: 0.3;
+        }
+
+        /* Social Proof */
+        .testimonial-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 2rem auto 0;
+        }
+
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .testimonial-title {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-roi {
+            background: var(--green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 4rem 5%;
+            background: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-large {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 1.5rem 4rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-large:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(250, 140, 65, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero .stats {
+                gap: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-8px);
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .table-header {
+                display: none;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- GLOBAL HEADER -->
+    <div id="header-placeholder"></div>
+    <script src="load-header.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Transform Your Real Estate Business</h1>
+        <p class="subtitle">Work with proven systems and expert guidance to scale faster, avoid costly mistakes, and maximize profits</p>
+        <div class="roi-badge">Average Client Generates $50K+ in First 90 Days</div>
+        <div class="stats">
+            <div class="stat-box">
+                <span class="stat-number">$2.4M+</span>
+                <span class="stat-label">Client Deals Closed</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">87%</span>
+                <span class="stat-label">Client Success Rate</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">4.2x</span>
+                <span class="stat-label">Average ROI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+        <h2>Not Sure Which Package Is Right for You?</h2>
+        <p>Take our 60-second quiz to find your perfect fit</p>
+        <button class="btn-quiz" onclick="scrollToPackages()">Find My Package →</button>
+    </section>
+
+    <!-- Retainer Packages -->
+    <section class="retainer-section">
+        <div class="section-header" id="packages">
+            <span class="badge green">💰 RECURRING REVENUE PRIORITY</span>
+            <h2>Consulting Retainer Packages</h2>
+            <p class="subtitle">Ongoing strategic support to scale your real estate business. Lock in monthly pricing and get priority access to our systems.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Platinum Decoy (Makes Enterprise Look Reasonable) -->
+            <div class="pricing-card premium">
+                <div class="scarcity-badge">Only 2 Spots Available</div>
+                <div class="card-header">
+                    <h3>Platinum Elite</h3>
+                    <p class="card-description">For serious operators ready to dominate their market</p>
+                </div>
+                <div class="price-wrapper">
+                    <span class="price">$14,997</span>
+                    <span class="price-period">/month</span>
+                    <p class="price-detail">That's only $469/hour for unlimited access</p>
+                    <span class="savings-badge">Save $4,000/year with annual plan</span>
+                </div>
+                <ul class="features-list">
+                    <li>40 hours/month consulting time</li>
+                    <li>24/7 direct access to Darius</li>
+                    <li>Daily strategy calls</li>
+                    <li>Bi-weekly in-person sessions</li>
+                    <li>White-glove deal support</li>
+                    <li>Custom software & systems</li>
+                    <li>Personal Slack channel</li>
+                    <li>Quarterly executive retreat</li>
+                    <li>Priority on all SCE services</li>
+                </ul>
+                <button class="btn-cta" onclick="window.location.href='contact.html?service=Platinum+Elite+Retainer'">Apply Now</button>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="pricing-card">
+                <div class="scarcity-badge">Only 5 Spots This Quarter</div>
+                <div class="card-header">
+                    <h3>Enterprise Retainer</h3>
+                    <p class="card-description">Premium positioning for scaling investors</p>
+                </div>
+                <div class="price-wrapper">
+                    <span class="price">$9,997</span>
+                    <span class="price-period">/month</span>
+                    <p class="price-detail">That's only $499/hour for dedicated support</p>
+                    <span class="savings-badge">Save $2,000/year with annual plan</span>
+                </div>
+                <ul class="features-list">
+                    <li>20 hours/month consulting</li>
+                    <li>24/7 priority support</li>
+                    <li>Bi-weekly strategy sessions</li>
+                    <li>Monthly executive presentation</li>
+                    <li>Dedicated Slack channel</li>
+                    <li>Custom system development</li>
+                    <li>Deal flow priority access</li>
+                    <li>Quarterly business review</li>
+                </ul>
+                <button class="btn-cta" onclick="window.location.href='contact.html?service=Enterprise+Retainer'">Book Discovery Call</button>
+            </div>
+
+            <!-- Growth (Featured - Best Value Anchor) -->
+            <div class="pricing-card featured">
+                <div class="popular-badge">⭐ MOST POPULAR</div>
+                <div class="scarcity-badge">Only 8 Spots Left</div>
+                <div class="card-header">
+                    <h3>Growth Retainer</h3>
+                    <p class="card-description">Perfect for active investors ready to scale</p>
+                </div>
+                <div class="price-wrapper">
+                    <span class="price">$4,997</span>
+                    <span class="price-period">/month</span>
+                    <p class="price-detail">Only $499/hour — save 50% vs one-time consulting</p>
+                    <span class="savings-badge">Save $1,000/year with annual plan (16% off)</span>
+                </div>
+                <ul class="features-list">
+                    <li>10 hours/month consulting</li>
+                    <li>Unlimited email/text support</li>
+                    <li>Weekly strategy calls</li>
+                    <li>Quarterly business review</li>
+                    <li>Access to all frameworks & templates</li>
+                    <li>Deal analysis support</li>
+                    <li>Priority booking on all services</li>
+                    <li>Community network access</li>
+                </ul>
+                <button class="btn-cta" onclick="window.location.href='contact.html?service=Growth+Retainer'">Start Growing Today</button>
+            </div>
+
+            <!-- Starter (Entry Point) -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3>Starter Retainer</h3>
+                    <p class="card-description">Entry point for high-value clients</p>
+                </div>
+                <div class="price-wrapper">
+                    <span class="price">$2,497</span>
+                    <span class="price-period">/month</span>
+                    <p class="price-detail">Only $499/hour for expert guidance</p>
+                    <span class="savings-badge">First month 50% off for new clients</span>
+                </div>
+                <ul class="features-list">
+                    <li>5 hours/month consulting</li>
+                    <li>Email/text support</li>
+                    <li>Monthly strategy call</li>
+                    <li>Access to frameworks & templates</li>
+                    <li>Community network access</li>
+                    <li>Can apply hours toward any service</li>
+                </ul>
+                <button class="btn-cta" onclick="window.location.href='contact.html?service=Starter+Retainer'">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- One-Time Consulting -->
+    <section class="onetime-section">
+        <div class="section-header">
+            <span class="badge">🎯 ONE-TIME CONSULTING</span>
+            <h2>Lower Commitment Entry</h2>
+            <p class="subtitle">Perfect for first-time clients or specific project needs. Credits can be applied toward retainer packages.</p>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Business Strategy Session</h3>
+                <div class="service-price">$997</div>
+                <p class="service-description">2-hour deep dive into your business</p>
+                <ul class="service-features">
+                    <li>Current state assessment</li>
+                    <li>Growth roadmap creation</li>
+                    <li>System & process recommendations</li>
+                    <li>90-day action plan</li>
+                    <li>Follow-up document</li>
+                </ul>
+                <a href="contact.html?service=Business+Strategy+Session" class="btn-contact">Schedule Session</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Deal Structure Analysis</h3>
+                <div class="service-price">$1,497</div>
+                <p class="service-description">Expert review of specific deal</p>
+                <ul class="service-features">
+                    <li>Full deal underwriting</li>
+                    <li>Risk assessment</li>
+                    <li>Financing structure review</li>
+                    <li>Negotiation strategy</li>
+                    <li>Partnership structure advice</li>
+                </ul>
+                <a href="contact.html?service=Deal+Structure+Analysis" class="btn-contact">Analyze My Deal</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Process Audit & Optimization</h3>
+                <div class="service-price">$2,997</div>
+                <p class="service-description">Full business process review</p>
+                <ul class="service-features">
+                    <li>Complete operations audit</li>
+                    <li>Bottleneck identification</li>
+                    <li>System recommendations</li>
+                    <li>Implementation roadmap</li>
+                    <li>30-day follow-up call</li>
+                </ul>
+                <a href="contact.html?service=Process+Audit" class="btn-contact">Audit My Business</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Custom Feasibility Study</h3>
+                <div class="service-price">$3,997 - $9,997</div>
+                <p class="service-description">Project-dependent pricing</p>
+                <ul class="service-features">
+                    <li>Market research & analysis</li>
+                    <li>Financial projections</li>
+                    <li>Risk assessment</li>
+                    <li>Regulatory review</li>
+                    <li>Go/no-go recommendation</li>
+                </ul>
+                <a href="contact.html?service=Feasibility+Study" class="btn-contact">Request Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="section-header">
+            <h2>Compare Retainer Packages</h2>
+            <p class="subtitle">See exactly what's included at each level</p>
+        </div>
+
+        <div class="comparison-table">
+            <div class="table-header">
+                <div>Feature</div>
+                <div style="text-align: center;">Starter</div>
+                <div style="text-align: center;">Growth</div>
+                <div style="text-align: center;">Enterprise</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Monthly Consulting Hours</div>
+                <div style="text-align: center;">5</div>
+                <div style="text-align: center;">10</div>
+                <div style="text-align: center;">20</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Email/Text Support</div>
+                <div class="check">✓</div>
+                <div class="check">✓ Unlimited</div>
+                <div class="check">✓ Priority</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Strategy Calls</div>
+                <div style="text-align: center;">Monthly</div>
+                <div style="text-align: center;">Weekly</div>
+                <div style="text-align: center;">Bi-Weekly</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Quarterly Business Review</div>
+                <div class="cross">—</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Monthly Executive Presentation</div>
+                <div class="cross">—</div>
+                <div class="cross">—</div>
+                <div class="check">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Dedicated Slack Channel</div>
+                <div class="cross">—</div>
+                <div class="cross">—</div>
+                <div class="check">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">24/7 Priority Support</div>
+                <div class="cross">—</div>
+                <div class="cross">—</div>
+                <div class="check">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Deal Flow Priority Access</div>
+                <div class="cross">—</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Community Network Access</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="feature-name">Frameworks & Templates</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+                <div class="check">✓ Custom</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Testimonials -->
+    <section class="testimonial-section">
+        <div class="section-header">
+            <span class="badge">💬 CLIENT SUCCESS STORIES</span>
+            <h2>Real Results from Real Clients</h2>
+        </div>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Working with Darius transformed how I underwrite deals. His system helped me close 3 properties in my first 90 days — all at 35%+ of ARV. The retainer paid for itself in one deal."</p>
+                <div class="testimonial-author">Marcus T.</div>
+                <div class="testimonial-title">Fix & Flip Investor, Charlotte</div>
+                <div class="testimonial-roi">ROI: 12x</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I was stuck managing 8 rehabs with no systems. After 6 months in the Growth Retainer, I've systemized my sub management and can now handle 15 projects simultaneously. Revenue up 180%."</p>
+                <div class="testimonial-author">Jennifer K.</div>
+                <div class="testimonial-title">General Contractor, Charlotte</div>
+                <div class="testimonial-roi">Revenue: +180%</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The Enterprise Retainer is worth every penny. Darius helped me structure my first syndication deal — $2.4M raise — and I couldn't have done it without his guidance. Now scaling to multiple projects."</p>
+                <div class="testimonial-author">David L.</div>
+                <div class="testimonial-title">Developer, Charlotte</div>
+                <div class="testimonial-roi">Deal Size: $2.4M</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What if I need to pause my retainer?</div>
+                <div class="faq-answer">We understand business needs change. You can pause your retainer for up to 3 months with 30 days notice. Unused hours do not roll over, but we're flexible with scheduling within each month.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I upgrade or downgrade my package?</div>
+                <div class="faq-answer">Absolutely. You can upgrade at any time and the change takes effect immediately. Downgrades take effect at your next billing cycle. We want you in the right package for your current needs.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How quickly can I get started?</div>
+                <div class="faq-answer">Most clients start within 7 days of signing up. We'll schedule your onboarding call within 48 hours and begin working together immediately. For Enterprise and Platinum clients, we can start same-week.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What if I'm not satisfied?</div>
+                <div class="faq-answer">We offer a 30-day money-back guarantee on your first month. If you're not seeing value, we'll refund your payment — no questions asked. Our client retention rate is 87%, so we're confident you'll see results.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can consulting hours be used for other SCE services?</div>
+                <div class="faq-answer">Yes! Retainer hours can be applied to any Southern Cities Enterprises service at the equivalent hourly rate. This gives you flexibility to use consulting time for deal analysis, project management support, or strategic planning.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you work with out-of-state investors?</div>
+                <div class="faq-answer">Yes. While we're based in Charlotte, about 40% of our retainer clients are out-of-state investors. Most consulting happens via video calls, with quarterly in-person sessions for Enterprise+ clients.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to Scale Your Real Estate Business?</h2>
+        <p>Book a free 30-minute strategy call. No pressure, no pitch — just an honest conversation about where you are and where you want to go.</p>
+        <a href="contact.html?service=Free+Strategy+Call" class="btn-large">Book Free Strategy Call</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Southern Cities Enterprises. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToPackages() {
+            document.getElementById('packages').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    </script>
+</body>
+</html>
