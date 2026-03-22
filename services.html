@@ -389,7 +389,15 @@
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="general-contracting.html">General Contracting</a>
+                    <a href="acquisitions.html">Acquisitions</a>
+                    <a href="brokerage.html">Brokerage</a>
+                    <a href="development.html">Development</a>
+                </div>
+            </li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -779,6 +787,23 @@
 
         function checkout() {
             if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            // Store cart in sessionStorage
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Redirect to checkout page
+            window.location.href = 'checkout.html';
+        }
+
+        // Initialize
+        updateCart();
+    </script>
+</body>
+</html>
+ if (cart.length === 0) {
                 alert('Your cart is empty!');
                 return;
             }

@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground-Up Development & Rehab | Southern Cities Enterprises</title>
+    <meta name="description" content="Full-service real estate development from concept to completion. Ground-up construction, property rehabilitation, project management, and feasibility studies in Charlotte, NC.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --red: #E63A27;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--navy);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .nav-phone {
+            background-color: var(--orange);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-phone:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-content a {
+            color: var(--navy);
+            padding: 12px 16px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--light-bg);
+            color: var(--orange);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            background-color: var(--orange);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            background-color: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Overview */
+        .overview {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .overview h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .overview p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Grid */
+        .services-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Process Flow */
+        .process-section {
+            padding: 4rem 5%;
+        }
+
+        .process-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .process-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: var(--orange);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: var(--orange);
+            border: 5px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--orange);
+        }
+
+        .timeline-content h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Project Types */
+        .project-types {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .project-types h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .type-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .type-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .type-header {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .type-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .type-content {
+            padding: 2rem;
+        }
+
+        .type-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .type-content ul li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            border-bottom: 1px solid #eee;
+        }
+
+        .type-content ul li:before {
+            content: "✓ ";
+            color: var(--orange);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Why Choose */
+        .why-section {
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .advantage-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid var(--light-bg);
+            transition: border-color 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            border-color: var(--orange);
+        }
+
+        .advantage-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .advantage-content h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .advantage-content p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .contact-container h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-container p {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--orange);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--navy);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .process-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .services-grid,
+            .types-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="Southern Cities Enterprises" onerror="this.style.display='none'">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="general-contracting.html">General Contracting</a>
+                    <a href="acquisitions.html">Acquisitions</a>
+                    <a href="brokerage.html">Brokerage</a>
+                    <a href="development.html">Development</a>
+                </div>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#contact" class="nav-phone">Discuss Your Project</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Ground-Up Development & Rehab</h1>
+        <p>From concept to completion, we transform ideas into income-producing real estate. Full-service development, property rehabilitation, project management, and strategic planning.</p>
+        <a href="#contact" class="hero-cta">Discuss Your Project</a>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview">
+        <h2>Building the Future of Charlotte Real Estate</h2>
+        <p>Southern Cities Enterprises doesn't just build properties—we create value. Our development division handles every phase of the real estate lifecycle: site acquisition, feasibility analysis, entitlement, design, construction, and exit strategy execution.</p>
+        <p>Whether you're an investor looking to maximize returns on a distressed property, a landowner seeking to unlock development potential, or a partner in search of a turnkey development solution, we bring the expertise, licenses, and operational infrastructure to deliver results.</p>
+        <p>Our integrated platform means faster timelines, tighter budgets, and better outcomes. We control the entire value chain: we source the deals (acquisitions), design and build the projects (GC division), market and sell the finished product (brokerage), and provide ongoing management if needed. No outsourcing, no finger-pointing—just seamless execution.</p>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section">
+        <h2>Development Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Ground-Up Construction</h3>
+                <p>New residential and commercial buildings from raw land. Site planning, permitting, design coordination, and full construction management.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔨</div>
+                <h3>Property Rehabilitation</h3>
+                <p>Complete renovation of distressed properties. Structural repairs, cosmetic upgrades, and full gut renovations to maximize ARV and marketability.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Feasibility Studies</h3>
+                <p>Comprehensive financial modeling, market analysis, and highest-and-best-use assessments. Know if your project pencils before you invest.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📝</div>
+                <h3>Entitlement & Permitting</h3>
+                <p>Zoning analysis, rezoning applications, site plan approvals, and permit acquisition. We navigate the red tape so you don't have to.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Project Management</h3>
+                <p>End-to-end oversight from site acquisition to final closeout. Budgeting, scheduling, vendor coordination, and quality control.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Development Consulting</h3>
+                <p>Strategic advisory for investors, landowners, and developers. Deal structuring, capital stack optimization, and exit strategy planning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="process-section">
+        <h2>Our Development Process</h2>
+        <div class="process-timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Phase 1: Opportunity Identification</h3>
+                    <p>Site assessment, market research, and preliminary feasibility analysis. We determine if the project aligns with investment criteria and market demand.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Phase 2: Financial Modeling</h3>
+                    <p>Detailed proforma development, cost estimation, and ROI projections. Scenario analysis to stress-test assumptions and identify risks.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Phase 3: Site Control & Due Diligence</h3>
+                    <p>Acquisition or option agreements, environmental studies, geotechnical surveys, title work, and zoning verification.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Phase 4: Design & Entitlement</h3>
+                    <p>Architectural design, civil engineering, site plan approvals, and permit acquisition. Coordinated with local planning departments.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Phase 5: Financing & Construction</h3>
+                    <p>Construction loan closing, GC selection (or self-perform via our GC division), and active construction with weekly oversight.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Phase 6: Completion & Exit</h3>
+                    <p>Final inspections, certificate of occupancy, lease-up or sale coordination, and project closeout. Refinance or disposition as planned.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Types -->
+    <section class="project-types">
+        <h2>Project Types We Handle</h2>
+        <div class="types-grid">
+            <div class="type-card">
+                <div class="type-header">
+                    <h3>🏘️ Residential</h3>
+                </div>
+                <div class="type-content">
+                    <ul>
+                        <li>Single-family new builds</li>
+                        <li>Townhome developments</li>
+                        <li>Small multifamily (2-8 units)</li>
+                        <li>Condo conversions</li>
+                        <li>Infill lot development</li>
+                        <li>Full gut rehabs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="type-card">
+                <div class="type-header">
+                    <h3>🏢 Commercial</h3>
+                </div>
+                <div class="type-content">
+                    <ul>
+                        <li>Retail centers</li>
+                        <li>Office buildings</li>
+                        <li>Warehouse conversions</li>
+                        <li>Mixed-use developments</li>
+                        <li>Adaptive reuse projects</li>
+                        <li>Ground-floor retail + residential</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="type-card">
+                <div class="type-header">
+                    <h3>🌳 Land Development</h3>
+                </div>
+                <div class="type-content">
+                    <ul>
+                        <li>Subdivision planning</li>
+                        <li>Lot splits & assemblage</li>
+                        <li>Site improvements (utilities, roads)</li>
+                        <li>Raw land entitlement</li>
+                        <li>Teardown & rebuild</li>
+                        <li>Highest-and-best-use repositioning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="type-card">
+                <div class="type-header">
+                    <h3>💼 Investment Partnerships</h3>
+                </div>
+                <div class="type-content">
+                    <ul>
+                        <li>Joint venture developments</li>
+                        <li>Capital partner projects</li>
+                        <li>Turnkey build-to-suit</li>
+                        <li>Developer fee structures</li>
+                        <li>Profit-sharing models</li>
+                        <li>Build-to-rent portfolios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-section">
+        <h2>Why Develop With Southern Cities?</h2>
+        <div class="advantage-grid">
+            <div class="advantage-item">
+                <div class="advantage-icon">🏗️</div>
+                <div class="advantage-content">
+                    <h3>Fully Integrated Platform</h3>
+                    <p>We control the entire value chain—acquisitions, design, construction, and sales. No middlemen, no coordination friction. Faster timelines and better margins.</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">📊</div>
+                <div class="advantage-content">
+                    <h3>Data-Driven Decision Making</h3>
+                    <p>Every project starts with rigorous financial modeling. We kill bad deals early and optimize good ones for maximum returns.</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">⚡</div>
+                <div class="advantage-content">
+                    <h3>Speed to Market</h3>
+                    <p>Our streamlined processes and in-house capabilities mean faster permitting, shorter construction cycles, and quicker exits.</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🔨</div>
+                <div class="advantage-content">
+                    <h3>Active GC Experience</h3>
+                    <p>We're not just developers—we're licensed GCs managing 8+ active projects. We know real construction costs, not just spreadsheet estimates.</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🎯</div>
+                <div class="advantage-content">
+                    <h3>Local Market Expertise</h3>
+                    <p>Deep knowledge of Charlotte's neighborhoods, zoning landscape, and market dynamics. We know where to build and what to build.</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🤝</div>
+                <div class="advantage-content">
+                    <h3>Skin in the Game</h3>
+                    <p>We invest in our own developments. Our interests are aligned—we win when you win.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Discuss Your Project</h2>
+            <p>Tell us about your development opportunity and we'll provide a preliminary feasibility assessment.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-type">Project Type *</label>
+                    <select id="project-type" name="project-type" required>
+                        <option value="">Select project type</option>
+                        <option value="ground-up-residential">Ground-Up Residential</option>
+                        <option value="ground-up-commercial">Ground-Up Commercial</option>
+                        <option value="rehab">Property Rehabilitation</option>
+                        <option value="land-development">Land Development</option>
+                        <option value="mixed-use">Mixed-Use Development</option>
+                        <option value="jv-partnership">JV/Partnership Opportunity</option>
+                        <option value="consulting">Development Consulting</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="site-address">Site Address (if applicable)</label>
+                    <input type="text" id="site-address" name="site-address">
+                </div>
+                <div class="form-group">
+                    <label for="project-size">Estimated Project Size *</label>
+                    <select id="project-size" name="project-size" required>
+                        <option value="">Select budget range</option>
+                        <option value="under-250k">Under $250,000</option>
+                        <option value="250k-500k">$250,000 - $500,000</option>
+                        <option value="500k-1m">$500,000 - $1,000,000</option>
+                        <option value="1m-3m">$1,000,000 - $3,000,000</option>
+                        <option value="over-3m">Over $3,000,000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="timeline">Project Timeline *</label>
+                    <select id="timeline" name="timeline" required>
+                        <option value="">Select timeline</option>
+                        <option value="planning">Planning Phase (exploring)</option>
+                        <option value="3-6months">Ready to Start (3-6 months)</option>
+                        <option value="immediate">Immediate (site acquired, ready to build)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your vision, site details, goals, or any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Request Feasibility Assessment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Southern Cities Enterprises. All rights reserved.</p>
+        <p>Real Estate Development | Charlotte, NC</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                projectType: document.getElementById('project-type').value,
+                siteAddress: document.getElementById('site-address').value,
+                projectSize: document.getElementById('project-size').value,
+                timeline: document.getElementById('timeline').value,
+                message: document.getElementById('message').value,
+                page: 'Development'
+            };
+            
+            console.log('Form submitted:', formData);
+            
+            alert('Thank you! We\'ll review your project details and provide a preliminary feasibility assessment within 48 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

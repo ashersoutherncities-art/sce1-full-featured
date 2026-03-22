@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Property Acquisition Services | Southern Cities Enterprises</title>
+    <meta name="description" content="White-glove deal sourcing for real estate investors. Pre-foreclosure leads, deal analysis, and multi-channel property acquisition in Charlotte, NC.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --red: #E63A27;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--navy);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .nav-phone {
+            background-color: var(--orange);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-phone:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-content a {
+            color: var(--navy);
+            padding: 12px 16px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--light-bg);
+            color: var(--orange);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            background-color: var(--orange);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            background-color: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: var(--orange);
+            color: white;
+            padding: 2rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            opacity: 0.95;
+        }
+
+        /* Overview */
+        .overview {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .overview h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .overview p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Buy Criteria */
+        .criteria-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .criteria-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .criteria-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .criteria-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .criteria-card h3 {
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .criteria-card .highlight {
+            font-size: 2rem;
+            color: var(--orange);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .criteria-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Services */
+        .services-section {
+            padding: 4rem 5%;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--light-bg);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Lead Sources */
+        .sources-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .sources-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .source-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--orange);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .source-card h4 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .source-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing */
+        .pricing-section {
+            padding: 4rem 5%;
+        }
+
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--orange);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--orange);
+            color: white;
+            padding: 0.4rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            color: var(--orange);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price-period {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card ul li:before {
+            content: "✓ ";
+            color: var(--orange);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-cta {
+            background-color: var(--navy);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .pricing-cta:hover {
+            background-color: var(--orange);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .contact-container h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-container p {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--orange);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--navy);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .criteria-grid,
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="Southern Cities Enterprises" onerror="this.style.display='none'">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="general-contracting.html">General Contracting</a>
+                    <a href="acquisitions.html">Acquisitions</a>
+                    <a href="brokerage.html">Brokerage</a>
+                    <a href="development.html">Development</a>
+                </div>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#contact" class="nav-phone">Start Finding Deals</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Strategic Property Acquisition</h1>
+        <p>White-glove deal sourcing for serious real estate investors. We deliver fully underwritten, off-market opportunities matched to your buy criteria—so you can focus on closing, not searching.</p>
+        <a href="#contact" class="hero-cta">Start Finding Deals</a>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <h3>50+</h3>
+            <p>Deals Sourced Monthly</p>
+        </div>
+        <div class="stat-item">
+            <h3>5+</h3>
+            <p>Lead Sources</p>
+        </div>
+        <div class="stat-item">
+            <h3>30-50%</h3>
+            <p>Target ARV Discount</p>
+        </div>
+        <div class="stat-item">
+            <h3>24-48h</h3>
+            <p>Deal Analysis Turnaround</p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview">
+        <h2>Deal Sourcing, Simplified</h2>
+        <p>Finding great real estate deals is time-consuming, competitive, and often frustrating. You're competing with hundreds of other investors for the same MLS listings, paying wholesalers inflated prices, or spending countless hours searching for off-market opportunities.</p>
+        <p>Our acquisitions division eliminates the noise. We operate a multi-channel deal sourcing machine that combines county records scraping, pre-foreclosure monitoring, cold calling campaigns, and proprietary lead sources to surface opportunities before they hit the market.</p>
+        <p>Every deal we send you includes professional analysis: ARV estimates, repair budgets, comparable sales, and clear ROI projections. We're active investors ourselves—we understand your criteria because we use the same standards for our own acquisitions.</p>
+    </section>
+
+    <!-- Buy Criteria -->
+    <section class="criteria-section">
+        <h2>Our Investment Criteria</h2>
+        <div class="criteria-grid">
+            <div class="criteria-card">
+                <div class="criteria-icon">🏚️</div>
+                <h3>Rehab Projects</h3>
+                <div class="highlight">30-50% of ARV</div>
+                <p>We target distressed properties with strong upside potential. After-Repair Value (ARV) must support at least 15%+ profit margin after all costs.</p>
+            </div>
+            <div class="criteria-card">
+                <div class="criteria-icon">🏗️</div>
+                <h3>Development Land</h3>
+                <div class="highlight">≤20% of As-Built Value</div>
+                <p>Raw land or teardown opportunities priced at 20% or less of stabilized project value. Focuses on highest-and-best-use potential.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section">
+        <h2>What We Deliver</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Off-Market Deal Sourcing</h3>
+                <p>Direct-to-seller outreach through cold calling, pre-foreclosure monitoring, and county records scraping. We find motivated sellers before properties hit MLS.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Full Deal Analysis</h3>
+                <p>Every opportunity includes detailed underwriting: ARV comps, repair estimates, profit projections, and ROI calculations. Make confident decisions quickly.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Custom Buy-Box Matching</h3>
+                <p>Tell us your criteria (location, property type, budget, return targets) and we'll filter deals to match. Only receive opportunities that fit your strategy.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Market Intelligence</h3>
+                <p>Real-time data on Charlotte-area trends, neighborhood dynamics, and emerging opportunities. Stay ahead of market shifts.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Negotiation Support</h3>
+                <p>We assist with offer preparation, seller communication, and deal structuring to maximize your success rate and minimize overpayment.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Priority Access</h3>
+                <p>Concierge-tier subscribers receive first look at our best deals before they're distributed to other investors or listed publicly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Sources -->
+    <section class="sources-section">
+        <h2>Where We Find Deals</h2>
+        <div class="sources-grid">
+            <div class="source-card">
+                <h4>🏛️ County Records</h4>
+                <p>Pre-foreclosure notices, tax liens, probate filings, and distressed property indicators pulled directly from Mecklenburg County records.</p>
+            </div>
+            <div class="source-card">
+                <h4>⚖️ Foreclosure Tracking</h4>
+                <p>Active foreclosure listings scraped from law firm websites and court filings. Early access before auction dates.</p>
+            </div>
+            <div class="source-card">
+                <h4>📞 Cold Calling Campaigns</h4>
+                <p>Dedicated caller reaching out to off-market property owners, absentee landlords, and motivated sellers daily.</p>
+            </div>
+            <div class="source-card">
+                <h4>📋 Propstream Lists</h4>
+                <p>High-equity distressed properties, code violations, estate sales, and other targeted list criteria.</p>
+            </div>
+            <div class="source-card">
+                <h4>💼 Investor Lift Platform</h4>
+                <p>Wholesale deals and off-market opportunities from networked investor community, pre-vetted for quality.</p>
+            </div>
+            <div class="source-card">
+                <h4>🌐 Direct Marketing</h4>
+                <p>Website inquiries, referrals from agents, contractors, and other professionals in our network.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <h2>Subscription Tiers</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Deal Flow Access</h3>
+                <div class="price">$297</div>
+                <div class="price-period">Per Month</div>
+                <ul>
+                    <li>Receive all qualified deals</li>
+                    <li>Basic underwriting included</li>
+                    <li>ARV & repair estimates</li>
+                    <li>Weekly deal alerts</li>
+                    <li>Access to deal archive</li>
+                    <li>No exclusivity</li>
+                </ul>
+                <a href="#contact" class="pricing-cta">Get Started</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Concierge</h3>
+                <div class="price">$997</div>
+                <div class="price-period">Per Month</div>
+                <ul>
+                    <li>3-5 custom deals per month</li>
+                    <li>Matched to your specific criteria</li>
+                    <li>Priority access (first look)</li>
+                    <li>Detailed investment analysis</li>
+                    <li>Negotiation support</li>
+                    <li>Direct access to acquisitions team</li>
+                </ul>
+                <a href="#contact" class="pricing-cta">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Turnkey Partner</h3>
+                <div class="price">$1,997</div>
+                <div class="price-period">Per Month</div>
+                <ul>
+                    <li>Everything in Concierge</li>
+                    <li>Full project management via GC division</li>
+                    <li>End-to-end coordination</li>
+                    <li>Tenant placement (brokerage)</li>
+                    <li>Property management referrals</li>
+                    <li>True turnkey solution</li>
+                </ul>
+                <a href="#contact" class="pricing-cta">Get Started</a>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; color: var(--gray);">
+            <strong>Optional Add-On:</strong> Success fees (1-2% of purchase price) available for clients who want aligned incentives on closed deals.
+        </p>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Start Finding Deals</h2>
+            <p>Tell us your investment criteria and we'll match you with qualified opportunities.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Investment Experience *</label>
+                    <select id="experience" name="experience" required>
+                        <option value="">Select your experience level</option>
+                        <option value="new">New Investor (0-2 deals)</option>
+                        <option value="active">Active Investor (3-10 deals/year)</option>
+                        <option value="experienced">Experienced (10+ deals/year)</option>
+                        <option value="professional">Full-Time Investor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="strategy">Primary Strategy *</label>
+                    <select id="strategy" name="strategy" required>
+                        <option value="">Select investment strategy</option>
+                        <option value="flip">Fix & Flip</option>
+                        <option value="rental">Buy & Hold Rentals</option>
+                        <option value="development">Ground-Up Development</option>
+                        <option value="wholesale">Wholesaling</option>
+                        <option value="mixed">Mixed Strategy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Acquisition Budget *</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select budget range</option>
+                        <option value="under-100k">Under $100,000</option>
+                        <option value="100k-250k">$100,000 - $250,000</option>
+                        <option value="250k-500k">$250,000 - $500,000</option>
+                        <option value="over-500k">Over $500,000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Details</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your buy criteria, preferred locations, property types, or any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Start Receiving Deals</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Southern Cities Enterprises. All rights reserved.</p>
+        <p>Strategic Property Acquisition | Charlotte, NC</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                experience: document.getElementById('experience').value,
+                strategy: document.getElementById('strategy').value,
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value,
+                page: 'Acquisitions'
+            };
+            
+            console.log('Form submitted:', formData);
+            
+            alert('Thank you! We\'ll review your investment criteria and reach out within 24 hours to discuss the right subscription tier for you.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

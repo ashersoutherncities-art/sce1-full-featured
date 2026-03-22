@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional General Contracting Services | Southern Cities Enterprises</title>
+    <meta name="description" content="Expert general contracting for residential and commercial projects. Subcontractor management, accurate estimating, and multi-job coordination in Charlotte, NC.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --red: #E63A27;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--navy);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .nav-phone {
+            background-color: var(--orange);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-phone:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-content a {
+            color: var(--navy);
+            padding: 12px 16px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--light-bg);
+            color: var(--orange);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            background-color: var(--orange);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            background-color: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Overview Section */
+        .overview {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .overview h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .overview p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Grid */
+        .services-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Process Flow */
+        .process-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            background-color: var(--orange);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--orange);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--orange);
+            color: white;
+            padding: 0.4rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            color: var(--orange);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price-period {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card ul li:before {
+            content: "✓ ";
+            color: var(--orange);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-cta {
+            background-color: var(--navy);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .pricing-cta:hover {
+            background-color: var(--orange);
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .case-studies h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-study {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .case-study-image {
+            background-color: var(--light-bg);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--navy);
+        }
+
+        .case-study-content {
+            padding: 2rem;
+        }
+
+        .case-study h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .case-study-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat {
+            flex: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        .stat-value {
+            font-size: 1.3rem;
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+        .case-study p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .contact-container h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-container p {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--orange);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--navy);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="Southern Cities Enterprises" onerror="this.style.display='none'">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="general-contracting.html">General Contracting</a>
+                    <a href="acquisitions.html">Acquisitions</a>
+                    <a href="brokerage.html">Brokerage</a>
+                    <a href="development.html">Development</a>
+                </div>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#contact" class="nav-phone">Get a Free Estimate</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Professional General Contracting Services</h1>
+        <p>Expert construction management for residential and commercial projects. From initial estimation to final walkthrough, we deliver quality craftsmanship on time and on budget.</p>
+        <a href="#contact" class="hero-cta">Get a Free Estimate</a>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview">
+        <h2>Construction Excellence, Simplified</h2>
+        <p>At Southern Cities Enterprises, our general contracting division specializes in managing the complexities of construction so you don't have to. With our GC license and years of hands-on experience managing multiple simultaneous projects, we bring professional oversight, cost control, and quality assurance to every job.</p>
+        <p>Whether you're an investor tackling your first rehab, a homeowner planning a renovation, or a developer managing multiple properties, we provide the systems, expertise, and subcontractor network to ensure your project succeeds.</p>
+        <p>Currently managing 8+ active projects across Charlotte, we've refined our processes to eliminate the common pain points: finding reliable subs, accurate estimating, payment coordination, and keeping projects on schedule.</p>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section">
+        <h2>Our Core Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔨</div>
+                <h3>Subcontractor Management</h3>
+                <p>Access to our vetted network of 50+ reliable subcontractors. We handle sourcing, scheduling, quality control, and payment coordination so you don't have to chase down trades or manage the headaches.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Project Estimation</h3>
+                <p>Fast, accurate cost estimates based on real project data. Our templated estimating system delivers line-item breakdowns in 24-48 hours, helping you make confident investment decisions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📅</div>
+                <h3>Multi-Job Coordination</h3>
+                <p>Managing multiple projects simultaneously? We provide oversight across your entire portfolio with centralized scheduling, progress tracking, and proactive issue resolution.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✅</div>
+                <h3>Quality Inspections</h3>
+                <p>Regular site visits and quality checkpoints throughout construction. We catch issues early, enforce standards, and ensure work meets code requirements before final sign-off.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Payment Processing</h3>
+                <p>Streamlined invoice management and payment coordination. We verify work completion, manage lien waivers, and ensure subs are paid on time to keep your project moving.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Permitting & Compliance</h3>
+                <p>We handle the paperwork—permit applications, inspections, code compliance, and final approvals. Our GC license and local relationships keep your project on track.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Flow -->
+    <section class="process-section">
+        <h2>How It Works</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Initial Consultation</h3>
+                <p>We review your project scope, timeline, and budget to understand your goals and requirements.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Site Assessment & Estimate</h3>
+                <p>We conduct a thorough site visit and deliver a detailed cost estimate with line-item breakdown.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Contract & Scheduling</h3>
+                <p>Once approved, we execute the contract and create a detailed project schedule with milestones.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Sub Coordination</h3>
+                <p>We source, vet, and schedule all subcontractors from our trusted network of trades.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h3>Construction Execution</h3>
+                <p>Work begins with daily oversight, progress tracking, and proactive communication.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">6</div>
+                <h3>Final Walkthrough & Closeout</h3>
+                <p>We complete punch list items, secure final inspections, and hand over a finished project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <h2>Service Packages</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Estimating Only</h3>
+                <div class="price">$150-$600</div>
+                <div class="price-period">Per Estimate</div>
+                <ul>
+                    <li>Site assessment & measurements</li>
+                    <li>Line-item cost breakdown</li>
+                    <li>Material & labor pricing</li>
+                    <li>24-48 hour turnaround</li>
+                    <li>Basic scope (cosmetic rehab)</li>
+                </ul>
+                <a href="#contact" class="pricing-cta">Request Estimate</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Project Coordination</h3>
+                <div class="price">$997-$1,997</div>
+                <div class="price-period">Per Month / Per Project</div>
+                <ul>
+                    <li>Full project oversight</li>
+                    <li>Sub sourcing & scheduling</li>
+                    <li>Quality inspections</li>
+                    <li>Progress tracking & reporting</li>
+                    <li>Payment coordination</li>
+                    <li>Permitting support</li>
+                </ul>
+                <a href="#contact" class="pricing-cta">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Full GC Services</h3>
+                <div class="price">10-15%</div>
+                <div class="price-period">Of Project Cost</div>
+                <ul>
+                    <li>Everything in Project Coordination</li>
+                    <li>GC as contract holder</li>
+                    <li>Full liability coverage</li>
+                    <li>Material procurement</li>
+                    <li>Warranty management</li>
+                    <li>Multi-project portfolio oversight</li>
+                </ul>
+                <a href="#contact" class="pricing-cta">Schedule Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <h2>Recent Projects</h2>
+        <div class="case-study-grid">
+            <div class="case-study">
+                <div class="case-study-image">🏠</div>
+                <div class="case-study-content">
+                    <h3>Full Gut Renovation - NoDa</h3>
+                    <div class="case-study-stats">
+                        <div class="stat">
+                            <div class="stat-label">Budget</div>
+                            <div class="stat-value">$85K</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Timeline</div>
+                            <div class="stat-value">12 Weeks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">ARV</div>
+                            <div class="stat-value">$425K</div>
+                        </div>
+                    </div>
+                    <p>Complete interior renovation including kitchen, bathrooms, flooring, and HVAC replacement. Project came in 5% under budget and sold within 3 days of listing.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-image">🏘️</div>
+                <div class="case-study-content">
+                    <h3>Multi-Unit Portfolio - Plaza Midwood</h3>
+                    <div class="case-study-stats">
+                        <div class="stat">
+                            <div class="stat-label">Projects</div>
+                            <div class="stat-value">4 Units</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Avg Budget</div>
+                            <div class="stat-value">$45K</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Timeline</div>
+                            <div class="stat-value">8 Weeks</div>
+                        </div>
+                    </div>
+                    <p>Managed simultaneous renovations across 4 rental properties. Staggered scheduling and centralized sub management delivered all units on time for lease-up.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-image">🏗️</div>
+                <div class="case-study-content">
+                    <h3>Commercial Buildout - South End</h3>
+                    <div class="case-study-stats">
+                        <div class="stat">
+                            <div class="stat-label">Budget</div>
+                            <div class="stat-value">$120K</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Timeline</div>
+                            <div class="stat-value">10 Weeks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">SF</div>
+                            <div class="stat-value">3,200</div>
+                        </div>
+                    </div>
+                    <p>Office space buildout with custom millwork, upgraded electrical, and ADA compliance updates. Coordinated with building management and delivered turnkey space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Get a Free Estimate</h2>
+            <p>Tell us about your project and we'll provide a detailed estimate within 48 hours.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-type">Project Type *</label>
+                    <select id="project-type" name="project-type" required>
+                        <option value="">Select project type</option>
+                        <option value="residential-rehab">Residential Rehab</option>
+                        <option value="new-construction">New Construction</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="multi-project">Multiple Projects</option>
+                        <option value="estimating-only">Estimating Only</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="property-address">Property Address</label>
+                    <input type="text" id="property-address" name="property-address">
+                </div>
+                <div class="form-group">
+                    <label for="budget">Estimated Budget</label>
+                    <select id="budget" name="budget">
+                        <option value="">Select budget range</option>
+                        <option value="under-25k">Under $25,000</option>
+                        <option value="25k-50k">$25,000 - $50,000</option>
+                        <option value="50k-100k">$50,000 - $100,000</option>
+                        <option value="100k-200k">$100,000 - $200,000</option>
+                        <option value="over-200k">Over $200,000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Request Free Estimate</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Southern Cities Enterprises. All rights reserved.</p>
+        <p>Licensed General Contractor | Charlotte, NC</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                projectType: document.getElementById('project-type').value,
+                propertyAddress: document.getElementById('property-address').value,
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value,
+                page: 'General Contracting'
+            };
+            
+            // TODO: Integrate with GHL webhook or email service
+            console.log('Form submitted:', formData);
+            
+            alert('Thank you! We\'ll review your project details and send you a detailed estimate within 48 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

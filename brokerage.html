@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licensed Real Estate Brokerage | Southern Cities Enterprises</title>
+    <meta name="description" content="Full-service real estate brokerage in Charlotte, NC. Residential & commercial sales, investment property analysis, and expert market guidance.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --red: #E63A27;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--navy);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .nav-phone {
+            background-color: var(--orange);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-phone:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-content a {
+            color: var(--navy);
+            padding: 12px 16px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--light-bg);
+            color: var(--orange);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-cta {
+            background-color: var(--orange);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            background-color: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .hero-cta.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .hero-cta.secondary:hover {
+            background-color: white;
+            color: var(--navy);
+        }
+
+        /* Overview */
+        .overview {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .overview h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .overview p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Grid */
+        .services-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Client Types */
+        .client-types {
+            padding: 4rem 5%;
+        }
+
+        .client-types h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .client-card {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .client-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .client-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .client-card p {
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* Market Expertise */
+        .expertise-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .expertise-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .expertise-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--orange);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .expertise-item h4 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .expertise-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-choose h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid var(--light-bg);
+            transition: border-color 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            border-color: var(--orange);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-content p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background-color: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .contact-container h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-container p {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--orange);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--navy);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .services-grid,
+            .client-grid,
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="Southern Cities Enterprises" onerror="this.style.display='none'">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="general-contracting.html">General Contracting</a>
+                    <a href="acquisitions.html">Acquisitions</a>
+                    <a href="brokerage.html">Brokerage</a>
+                    <a href="development.html">Development</a>
+                </div>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#contact" class="nav-phone">Work With Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Licensed Real Estate Brokerage</h1>
+        <p>Full-service real estate representation for buyers, sellers, and investors. Deep market knowledge, expert negotiation, and integrated construction & development expertise.</p>
+        <div class="hero-buttons">
+            <a href="#contact-sell" class="hero-cta">List Your Property</a>
+            <a href="#contact-buy" class="hero-cta secondary">Find Properties</a>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview">
+        <h2>Real Estate Expertise, Integrated Solutions</h2>
+        <p>Southern Cities Enterprises brings a unique perspective to real estate brokerage. We're not just agents—we're active investors, licensed general contractors, and developers. This gives us unmatched insight into property values, renovation costs, and investment potential.</p>
+        <p>Whether you're buying your first home, selling a property, or building a rental portfolio, we provide data-driven guidance backed by real-world construction and development experience. We understand the numbers behind every transaction because we run them on our own deals every day.</p>
+        <p>Our integrated platform means you get more than just brokerage services—you gain access to our full ecosystem: deal sourcing, construction management, project development, and long-term investment strategy.</p>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section">
+        <h2>Full-Service Brokerage</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Residential Sales</h3>
+                <p>Buyer and seller representation for single-family homes, condos, townhomes, and multi-family properties across the Charlotte metro area.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Real Estate</h3>
+                <p>Office, retail, industrial, and mixed-use property transactions. Lease negotiations, investment sales, and portfolio acquisitions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Investment Property Analysis</h3>
+                <p>Detailed cash flow projections, ROI analysis, and market feasibility studies. We show you the real numbers, not just the listing price.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔑</div>
+                <h3>Property Search & Acquisition</h3>
+                <p>Custom property searches tailored to your criteria. Access to MLS, off-market deals, and our proprietary acquisition pipeline.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📝</div>
+                <h3>Transaction Coordination</h3>
+                <p>Full-service coordination from contract to close: inspections, appraisals, financing, title work, and closing logistics.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>Market Consultation</h3>
+                <p>Neighborhood analysis, pricing strategy, timing recommendations, and long-term market trend insights for Charlotte and surrounding areas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Types -->
+    <section class="client-types">
+        <h2>Who We Serve</h2>
+        <div class="client-grid">
+            <div class="client-card">
+                <h3>Homebuyers</h3>
+                <p>First-time buyers, families upgrading, or relocating professionals. We guide you through every step with transparency and market expertise.</p>
+            </div>
+            <div class="client-card">
+                <h3>Home Sellers</h3>
+                <p>Maximize your sale price with data-driven pricing, professional marketing, and expert negotiation. We can also recommend value-add improvements.</p>
+            </div>
+            <div class="client-card">
+                <h3>Real Estate Investors</h3>
+                <p>Fix-and-flip, buy-and-hold, or development investors. We speak your language and understand the metrics that drive profitable deals.</p>
+            </div>
+            <div class="client-card">
+                <h3>Commercial Clients</h3>
+                <p>Business owners, developers, and institutional investors seeking office, retail, industrial, or mixed-use properties in growing markets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Expertise -->
+    <section class="expertise-section">
+        <h2>Charlotte Market Expertise</h2>
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <h4>📍 Neighborhood Insights</h4>
+                <p>Deep knowledge of Charlotte's emerging neighborhoods, school districts, and development trends.</p>
+            </div>
+            <div class="expertise-item">
+                <h4>📈 Pricing Strategy</h4>
+                <p>Data-driven CMAs (Comparative Market Analysis) using recent comps, market velocity, and seasonal trends.</p>
+            </div>
+            <div class="expertise-item">
+                <h4>🏗️ Construction Costs</h4>
+                <p>Accurate repair and renovation estimates thanks to our active general contracting division.</p>
+            </div>
+            <div class="expertise-item">
+                <h4>💰 Investment Returns</h4>
+                <p>Cash-on-cash return calculations, cap rates, and ARV analysis for rental and flip properties.</p>
+            </div>
+            <div class="expertise-item">
+                <h4>🤝 Negotiation Power</h4>
+                <p>Skilled negotiators who understand seller motivations, market positioning, and deal structure.</p>
+            </div>
+            <div class="expertise-item">
+                <h4>⚡ Speed to Close</h4>
+                <p>Streamlined transaction process with in-house coordination and trusted vendor relationships.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <h2>Why Work With Southern Cities Brokerage?</h2>
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <div class="benefit-icon">🔨</div>
+                <div class="benefit-content">
+                    <h3>We're Active Contractors & Investors</h3>
+                    <p>Unlike traditional agents, we actually buy, renovate, and develop properties. This gives us insider knowledge on true property values, renovation costs, and investment potential.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-content">
+                    <h3>Data-Driven, Not Sales-Driven</h3>
+                    <p>We provide honest, numbers-based guidance. If a deal doesn't make sense, we'll tell you—even if it costs us a commission.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🏗️</div>
+                <div class="benefit-content">
+                    <h3>Integrated Platform Advantage</h3>
+                    <p>Need construction estimates? Development feasibility? Property management referrals? We have in-house solutions across the entire real estate value chain.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-content">
+                    <h3>Off-Market Access</h3>
+                    <p>Tap into our acquisitions pipeline for off-market opportunities before they hit MLS or get distributed to other buyers.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-content">
+                    <h3>Fast, Responsive Service</h3>
+                    <p>In competitive markets, speed wins. We respond quickly, coordinate efficiently, and get deals done without unnecessary delays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form - Sellers -->
+    <section class="contact-section" id="contact-sell">
+        <div class="contact-container">
+            <h2>List Your Property</h2>
+            <p>Get a free market analysis and listing strategy consultation.</p>
+            <form id="seller-form">
+                <div class="form-group">
+                    <label for="seller-name">Full Name *</label>
+                    <input type="text" id="seller-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="seller-email">Email *</label>
+                    <input type="email" id="seller-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="seller-phone">Phone *</label>
+                    <input type="tel" id="seller-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="property-address">Property Address *</label>
+                    <input type="text" id="property-address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="property-type">Property Type *</label>
+                    <select id="property-type" name="property-type" required>
+                        <option value="">Select property type</option>
+                        <option value="single-family">Single Family Home</option>
+                        <option value="condo">Condo/Townhome</option>
+                        <option value="multi-family">Multi-Family (2-4 units)</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="land">Land/Vacant Lot</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="timeline">Selling Timeline *</label>
+                    <select id="timeline" name="timeline" required>
+                        <option value="">Select timeline</option>
+                        <option value="asap">As soon as possible</option>
+                        <option value="1-3months">1-3 months</option>
+                        <option value="3-6months">3-6 months</option>
+                        <option value="exploring">Just exploring</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="seller-message">Additional Details</label>
+                    <textarea id="seller-message" name="message" placeholder="Tell us about your property, goals, or any questions you have..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Request Free Market Analysis</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Form - Buyers -->
+    <section class="contact-section" id="contact-buy">
+        <div class="contact-container">
+            <h2>Find Your Next Property</h2>
+            <p>Tell us what you're looking for and we'll create a custom property search.</p>
+            <form id="buyer-form">
+                <div class="form-group">
+                    <label for="buyer-name">Full Name *</label>
+                    <input type="text" id="buyer-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="buyer-email">Email *</label>
+                    <input type="email" id="buyer-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="buyer-phone">Phone *</label>
+                    <input type="tel" id="buyer-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="buyer-type">I'm Looking For *</label>
+                    <select id="buyer-type" name="buyer-type" required>
+                        <option value="">Select property type</option>
+                        <option value="primary-residence">Primary Residence</option>
+                        <option value="investment-rental">Investment Property (Rental)</option>
+                        <option value="investment-flip">Investment Property (Flip)</option>
+                        <option value="commercial">Commercial Property</option>
+                        <option value="land-development">Land/Development</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Budget Range *</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select budget</option>
+                        <option value="under-200k">Under $200,000</option>
+                        <option value="200k-400k">$200,000 - $400,000</option>
+                        <option value="400k-600k">$400,000 - $600,000</option>
+                        <option value="600k-1m">$600,000 - $1,000,000</option>
+                        <option value="over-1m">Over $1,000,000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="areas">Preferred Areas</label>
+                    <input type="text" id="areas" name="areas" placeholder="e.g., South End, NoDa, Plaza Midwood">
+                </div>
+                <div class="form-group">
+                    <label for="buyer-message">Additional Requirements</label>
+                    <textarea id="buyer-message" name="message" placeholder="Tell us about your must-haves, deal-breakers, timeline, or any questions..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Start Property Search</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Southern Cities Enterprises. All rights reserved.</p>
+        <p>Licensed Real Estate Brokerage | Charlotte, NC</p>
+    </footer>
+
+    <script>
+        document.getElementById('seller-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: document.getElementById('seller-name').value,
+                email: document.getElementById('seller-email').value,
+                phone: document.getElementById('seller-phone').value,
+                address: document.getElementById('property-address').value,
+                propertyType: document.getElementById('property-type').value,
+                timeline: document.getElementById('timeline').value,
+                message: document.getElementById('seller-message').value,
+                formType: 'Seller',
+                page: 'Brokerage'
+            };
+            console.log('Seller form submitted:', formData);
+            alert('Thank you! We\'ll prepare a comprehensive market analysis and reach out within 24 hours.');
+            this.reset();
+        });
+
+        document.getElementById('buyer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: document.getElementById('buyer-name').value,
+                email: document.getElementById('buyer-email').value,
+                phone: document.getElementById('buyer-phone').value,
+                buyerType: document.getElementById('buyer-type').value,
+                budget: document.getElementById('budget').value,
+                areas: document.getElementById('areas').value,
+                message: document.getElementById('buyer-message').value,
+                formType: 'Buyer',
+                page: 'Brokerage'
+            };
+            console.log('Buyer form submitted:', formData);
+            alert('Thank you! We\'ll set up your custom property search and send matching listings within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
