@@ -49,9 +49,9 @@
 
 
 
-        /* ===== HERO SECTION (BLACK BACKGROUND, WHITE TEXT) ===== */
+        /* ===== HERO SECTION (GRADIENT BACKGROUND, WHITE TEXT) ===== */
         .hero {
-            background-color: var(--black);
+            background: linear-gradient(135deg, #132452 0%, #0a1a3f 100%);
             color: var(--white);
             text-align: center;
             padding: 120px 5% 80px;
@@ -63,6 +63,8 @@
             font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
         }
 
         .hero .subtitle {
@@ -71,6 +73,19 @@
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
             font-weight: 400;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-buttons {
@@ -88,6 +103,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid var(--orange);
+            display: inline-block;
         }
 
         .btn-primary {
@@ -100,6 +116,11 @@
             color: var(--navy);
         }
 
+        .btn-primary:active,
+        .btn-secondary:active {
+            transform: translateY(-2px);
+        }
+
         .btn-secondary {
             background-color: transparent;
             color: var(--white);
@@ -107,6 +128,27 @@
 
         .btn-secondary:hover {
             background-color: var(--orange);
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        .trust-badges span {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         /* ===== FOUR-COLUMN FEATURE CARDS ===== */
@@ -165,6 +207,23 @@
             color: var(--gray);
             font-size: 16px;
             line-height: 1.8;
+        }
+
+        .feature-card .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
         }
 
         /* ===== ABOUT SECTION (WHITE BACKGROUND, NAVY/ORANGE ACCENTS) ===== */
@@ -361,6 +420,42 @@
             font-size: 16px;
         }
 
+        /* ===== STICKY CONTACT BUTTON ===== */
+        .sticky-contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(250, 140, 65, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .sticky-contact.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .sticky-contact:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(250, 140, 65, 0.6);
+        }
+
+        .sticky-contact svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 968px) {
             .hero h1 {
@@ -401,6 +496,15 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .trust-badges {
+                gap: 1rem;
+            }
+
+            .trust-badges span {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
         }
     </style>
 </head>
@@ -414,12 +518,17 @@
     <section class="hero" id="home">
         <p class="subtitle">Deal Analysis • Cost Estimating • Investor Leads</p>
         <h1>Professional Real Estate<br>Services That Scale</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; opacity: 0; animation: fadeInUp 1s ease 0.3s forwards;">
             Three core deliverables to help you analyze deals, estimate costs, and grow your investor network.
         </p>
-        <div class="hero-buttons">
+        <div class="hero-buttons" style="opacity: 0; animation: fadeInUp 1s ease 0.5s forwards;">
             <a href="services.html" class="btn-primary">VIEW SERVICES & PRICING</a>
             <a href="contact.html" class="btn-secondary">CONTACT US</a>
+        </div>
+        <div class="trust-badges">
+            <span>✓ 500+ Deals Analyzed</span>
+            <span>✓ $50M+ Properties</span>
+            <span>✓ 200+ Active Investors</span>
         </div>
     </section>
 
@@ -427,23 +536,17 @@
     <section class="features">
         <div class="features-grid" style="grid-template-columns: repeat(3, 1fr);">
             <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="./assets/images/icon-plan.svg" alt="Deal Analysis Icon">
-                </div>
+                <div class="service-icon">📊</div>
                 <h3>DEAL ANALYSIS</h3>
                 <p>Comprehensive investment evaluation packages from quick screening to investor-ready presentations. $297-$997</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="./assets/images/icon-execute.svg" alt="Cost Estimating Icon">
-                </div>
+                <div class="service-icon">💰</div>
                 <h3>COST ESTIMATING</h3>
                 <p>Accurate construction budgets from cosmetic rehabs to major renovations. 24-72 hour turnaround. $150-$1,200</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="./assets/images/icon-optimize.svg" alt="Investor Leads Icon">
-                </div>
+                <div class="service-icon">📈</div>
                 <h3>INVESTOR LEADS</h3>
                 <p>Monthly qualified investor lead generation with verified contacts and enriched data. $497-$997/month</p>
             </div>
@@ -601,6 +704,13 @@
         <p>© 2025 Southern Cities Enterprise - All Rights Reserved.</p>
     </div>
 
+    <!-- Sticky Contact Button -->
+    <a href="tel:2523396146" class="sticky-contact" id="stickyContact">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+        </svg>
+    </a>
+
     <script>
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -615,8 +725,18 @@
                 }
             });
         });
+
+        // Sticky Contact Button - Show on scroll
+        const stickyContact = document.getElementById('stickyContact');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                stickyContact.classList.add('show');
+            } else {
+                stickyContact.classList.remove('show');
+            }
+        });
     </script>
 
 </body>
 </html>
-<!-- Updated Sun Mar 22 17:22:12 EDT 2026 -->
+<!-- Updated Sun Mar 22 18:40 EDT 2026 -->
