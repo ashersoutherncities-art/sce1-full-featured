@@ -16,7 +16,7 @@
         margin: 0 auto;
         padding: 0 2rem;
         display: grid;
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
         height: 80px;
     }
@@ -44,11 +44,13 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
+        justify-self: center;
     }
     
     .nav-cta-wrapper {
         display: flex;
         justify-content: flex-end;
+        justify-self: end;
     }
 
     .nav-menu {
@@ -198,6 +200,7 @@
         padding: 0.5rem;
         background: none;
         border: none;
+        justify-self: center;
     }
 
     .mobile-toggle span {
@@ -340,28 +343,23 @@
     /* Center hamburger on mobile */
     @media (max-width: 968px) {
         .header-container {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            grid-template-areas: "logo hamburger cta";
+            grid-template-columns: auto auto 1fr;
         }
         
         .header-logo {
-            grid-area: logo;
             justify-self: start;
         }
         
         .mobile-toggle {
-            grid-area: hamburger;
-            justify-self: center;
             display: flex;
         }
         
         .header-nav {
             grid-column: 1 / -1;
+            grid-row: 2;
         }
         
         .nav-cta-wrapper {
-            grid-area: cta;
             justify-self: end;
         }
     }
@@ -373,6 +371,13 @@
         <a href="index.html" class="header-logo">
             <img src="assets/images/logo.svg" alt="Southern Cities Enterprises">
         </a>
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
         <!-- Navigation -->
         <nav class="header-nav" id="headerNav">
@@ -411,13 +416,6 @@
         <div class="nav-cta-wrapper">
             <a href="services.html" class="cta-button">Get Started</a>
         </div>
-
-        <!-- Mobile Toggle -->
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </div>
 </header>
 
