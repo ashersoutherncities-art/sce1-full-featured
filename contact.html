@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Southern Cities Enterprises</title>
+    <meta name="description" content="Get in touch with Southern Cities Enterprises for real estate and construction services.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --red: #E63A27;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            background: var(--light-bg);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Contact Form Container */
+        .contact-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-section h2 {
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--orange);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        .btn-submit {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: var(--navy);
+            transform: scale(1.02);
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--orange);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- GLOBAL HEADER -->
+    <div id="header-placeholder"></div>
+    <script src="load-header.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Get in Touch</h1>
+        <p>Ready to start your project? Fill out the form below and we'll get back to you within 24 hours.</p>
+    </section>
+
+    <div class="contact-container">
+        <a href="services.html" class="back-link">← Back to Services</a>
+        
+        <div class="contact-form">
+            <div id="successMessage" class="success-message">
+                Thank you! Your inquiry has been submitted. We'll be in touch soon.
+            </div>
+
+            <form id="contactForm">
+                <div class="form-section">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Interested In *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="Cost Estimating">Cost Estimating</option>
+                            <option value="Property Valuation">Property Valuation</option>
+                            <option value="CMA">CMAs / Market Analysis</option>
+                            <option value="Deal Analysis">Deal Analysis</option>
+                            <option value="Financial Modeling">Financial Modeling</option>
+                            <option value="Deal Sourcing">Deal Sourcing Subscription</option>
+                            <option value="Transaction Coordination">Transaction Coordination</option>
+                            <option value="Project Management">Construction Project Management</option>
+                            <option value="GC Services">Full GC Services</option>
+                            <option value="Development">Development Projects</option>
+                            <option value="Construction Management">Construction Management</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="propertyAddress">Property Address (if applicable)</label>
+                        <input type="text" id="propertyAddress" name="propertyAddress" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Details / Questions *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or what you need help with..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select timeline</option>
+                            <option value="Immediate">Immediate (within 1 week)</option>
+                            <option value="1-2 weeks">1-2 weeks</option>
+                            <option value="1 month">Within 1 month</option>
+                            <option value="2-3 months">2-3 months</option>
+                            <option value="3+ months">3+ months</option>
+                            <option value="Just exploring">Just exploring options</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Southern Cities Enterprises. All rights reserved.</p>
+        <p>Building the future of real estate, one project at a time.</p>
+    </footer>
+
+    <script>
+        // Pre-fill service if passed via URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (serviceParam) {
+            const serviceSelect = document.getElementById('service');
+            // Try to match the service parameter
+            for (let option of serviceSelect.options) {
+                if (option.value.toLowerCase().includes(serviceParam.toLowerCase()) || 
+                    serviceParam.toLowerCase().includes(option.value.toLowerCase())) {
+                    serviceSelect.value = option.value;
+                    break;
+                }
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                propertyAddress: document.getElementById('propertyAddress').value,
+                message: document.getElementById('message').value,
+                timeline: document.getElementById('timeline').value,
+                submittedAt: new Date().toISOString()
+            };
+
+            // In production, you would send this to your backend
+            // For now, we'll simulate success
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+
+            // In production, implement actual form submission:
+            /*
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('successMessage').style.display = 'block';
+                this.reset();
+            })
+            .catch(error => {
+                alert('There was an error submitting your inquiry. Please try again or email us directly.');
+                console.error('Error:', error);
+            });
+            */
+        });
+    </script>
+</body>
+</html>
