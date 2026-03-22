@@ -331,36 +331,51 @@
 
     @media (max-width: 768px) {
         .header-container {
-            padding: 0 1.5rem;
+            padding: 0 1rem;
             height: 70px;
+            gap: 0.75rem;
         }
 
         .header-logo img {
             height: 40px;
+        }
+        
+        .cta-button {
+            padding: 0.625rem 1.25rem;
+            font-size: 13px;
         }
     }
 
     /* Center hamburger on mobile */
     @media (max-width: 968px) {
         .header-container {
-            grid-template-columns: auto auto 1fr;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
         }
         
         .header-logo {
-            justify-self: start;
+            flex-shrink: 0;
         }
         
         .mobile-toggle {
             display: flex;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .header-nav {
-            grid-column: 1 / -1;
-            grid-row: 2;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
         }
         
         .nav-cta-wrapper {
-            justify-self: end;
+            flex-shrink: 0;
         }
     }
 </style>
