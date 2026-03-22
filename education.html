@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Education Hub | Southern Cities Enterprises</title>
+    <meta name="description" content="Master real estate investing with comprehensive guides on deal analysis, property types, appraisals, financing, and working with professionals. Free education from industry experts.">
+    <meta name="keywords" content="real estate investing 9-5, property classes, deal analysis, real estate education, investment properties, real estate glossary">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --red: #E63A27;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            background: var(--light-bg);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 5rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1.2rem 3.5rem 1.2rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            background: white;
+            padding: 2rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 2rem;
+            background: white;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* Content Container */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 5rem;
+        }
+
+        .category-header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .category-header h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .category-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Article Grid */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 4px solid transparent;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            border-left-color: var(--orange);
+        }
+
+        .article-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--light-bg);
+            color: var(--navy);
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .article-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.8rem;
+        }
+
+        .article-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Special Feature Card */
+        .feature-card {
+            background: linear-gradient(135deg, var(--orange) 0%, #ff9d5c 100%);
+            color: white;
+            grid-column: span 2;
+        }
+
+        .feature-card .article-tag {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .feature-card h3,
+        .feature-card p,
+        .feature-card .article-meta {
+            color: white;
+        }
+
+        .feature-card:hover {
+            border-left-color: white;
+        }
+
+        /* Glossary Preview */
+        .glossary-preview {
+            background: var(--navy);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .glossary-preview h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .glossary-preview p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .glossary-terms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .glossary-term-tag {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .glossary-term-tag:hover {
+            background: var(--orange);
+            transform: translateY(-2px);
+        }
+
+        .btn-glossary {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--orange);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-glossary:hover {
+            background: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            border: 2px solid var(--orange);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--orange);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 3rem 5% 2rem;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                grid-column: span 1;
+            }
+
+            .tabs-container {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                width: 100%;
+            }
+
+            .category-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (loaded dynamically) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Real Estate Education Hub</h1>
+        <p class="subtitle">Master the fundamentals, execute with confidence</p>
+        <p>From deal analysis to property management, we've compiled everything you need to succeed in real estate investing—whether you're working a 9-5 or building your empire full-time.</p>
+        
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search articles, topics, or terms...">
+            <span class="search-icon">🔍</span>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="filter-tabs">
+        <div class="tabs-container">
+            <button class="tab-btn active" data-category="all">All Topics</button>
+            <button class="tab-btn" data-category="getting-started">Getting Started</button>
+            <button class="tab-btn" data-category="analysis">Deal Analysis</button>
+            <button class="tab-btn" data-category="property-types">Property Types</button>
+            <button class="tab-btn" data-category="appraisals">Appraisals</button>
+            <button class="tab-btn" data-category="professionals">Working with Pros</button>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <!-- Getting Started Section -->
+        <section class="category-section" data-category="getting-started">
+            <div class="category-header">
+                <h2>Getting Started</h2>
+                <p>Your roadmap from employee to investor. Practical strategies for building wealth while keeping your day job.</p>
+            </div>
+            <div class="article-grid">
+                <a href="education/9-5-investing.html" class="article-card feature-card">
+                    <div class="article-icon">🚀</div>
+                    <span class="article-tag">ESSENTIAL READING</span>
+                    <h3>How to Invest in Real Estate with a 9-5 Job</h3>
+                    <p>The complete guide to building a real estate portfolio while working full-time. Time management, remote strategies, team building, and your first property roadmap.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 15 min read</span>
+                        <span>2,000+ words</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Deal Analysis Section -->
+        <section class="category-section" data-category="analysis">
+            <div class="category-header">
+                <h2>Deal Analysis & Metrics</h2>
+                <p>Learn to evaluate properties like a pro. Master the numbers that separate good deals from great ones.</p>
+            </div>
+            <div class="article-grid">
+                <a href="education/deal-analysis-framework.html" class="article-card">
+                    <div class="article-icon">📊</div>
+                    <span class="article-tag">FRAMEWORK</span>
+                    <h3>Complete Deal Analysis Framework</h3>
+                    <p>ARV calculation, repair cost estimation, cash flow analysis, ROI metrics (CoC, IRR, CapRate), the 70% rule, 1% rule, and more. Includes downloadable checklist.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 18 min read</span>
+                        <span>2,500+ words</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Property Types Section -->
+        <section class="category-section" data-category="property-types">
+            <div class="category-header">
+                <h2>Understanding Property Types</h2>
+                <p>Not all properties are created equal. Learn the characteristics, risks, and returns of different asset classes.</p>
+            </div>
+            <div class="article-grid">
+                <a href="education/property-classes.html" class="article-card">
+                    <div class="article-icon">🏘️</div>
+                    <span class="article-tag">CLASSIFICATION</span>
+                    <h3>Understanding Property Classes (A, B, C, D)</h3>
+                    <p>Deep dive into property classifications: characteristics, risk/return profiles, and which class aligns with your investment strategy.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 12 min read</span>
+                        <span>1,800+ words</span>
+                    </div>
+                </a>
+                <a href="education/property-types-comparison.html" class="article-card">
+                    <div class="article-icon">🏗️</div>
+                    <span class="article-tag">COMPARISON</span>
+                    <h3>Residential vs Commercial vs Land</h3>
+                    <p>Compare investment strategies across residential, commercial, and land. Financing, management, returns, and ideal entry points for each.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 10 min read</span>
+                        <span>1,500+ words</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Appraisals Section -->
+        <section class="category-section" data-category="appraisals">
+            <div class="category-header">
+                <h2>Appraisals & Valuations</h2>
+                <p>Understanding property valuation is critical. Know which appraisal method to use and when.</p>
+            </div>
+            <div class="article-grid">
+                <a href="education/appraisal-types.html" class="article-card">
+                    <div class="article-icon">📋</div>
+                    <span class="article-tag">VALUATION</span>
+                    <h3>Types of Appraisals & When to Use Each</h3>
+                    <p>Full appraisals, desktop appraisals, BPOs, and CMAs explained. When each is required, costs, timelines, and how to interpret results.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 12 min read</span>
+                        <span>1,800+ words</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Working with Professionals Section -->
+        <section class="category-section" data-category="professionals">
+            <div class="category-header">
+                <h2>Working with Professionals</h2>
+                <p>Build your team. Learn how to find, vet, and work effectively with agents, attorneys, lenders, and contractors.</p>
+            </div>
+            <div class="article-grid">
+                <a href="education/working-with-agents.html" class="article-card">
+                    <div class="article-icon">🤝</div>
+                    <span class="article-tag">TEAM BUILDING</span>
+                    <h3>How to Work with Real Estate Agents</h3>
+                    <p>Finding investor-friendly agents, setting expectations, leveraging their expertise, and building long-term relationships.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 10 min read</span>
+                        <span>1,500+ words</span>
+                    </div>
+                </a>
+                <a href="education/real-estate-attorneys.html" class="article-card">
+                    <div class="article-icon">⚖️</div>
+                    <span class="article-tag">LEGAL</span>
+                    <h3>Understanding Attorneys in Real Estate</h3>
+                    <p>When you need an attorney, what they do, how to choose one, and protecting yourself in transactions.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 10 min read</span>
+                        <span>1,500+ words</span>
+                    </div>
+                </a>
+                <a href="education/financing-and-lenders.html" class="article-card">
+                    <div class="article-icon">💰</div>
+                    <span class="article-tag">FINANCING</span>
+                    <h3>Working with Lenders & Getting Financing</h3>
+                    <p>Conventional, FHA, hard money, private money, and portfolio loans. How to get approved, build lender relationships, and structure deals.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 12 min read</span>
+                        <span>1,800+ words</span>
+                    </div>
+                </a>
+                <a href="education/hiring-contractors.html" class="article-card">
+                    <div class="article-icon">🔨</div>
+                    <span class="article-tag">CONSTRUCTION</span>
+                    <h3>Hiring & Managing Contractors</h3>
+                    <p>Vetting contractors, getting accurate estimates, managing projects, avoiding common pitfalls, and ensuring quality work.</p>
+                    <div class="article-meta">
+                        <span class="read-time">📖 10 min read</span>
+                        <span>1,500+ words</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Glossary Preview Section -->
+    <section class="glossary-preview">
+        <h2>Real Estate Glossary</h2>
+        <p>75+ essential terms every investor should know. Searchable, categorized, and written in plain English.</p>
+        <div class="glossary-terms">
+            <span class="glossary-term-tag">ARV</span>
+            <span class="glossary-term-tag">Cap Rate</span>
+            <span class="glossary-term-tag">Cash-on-Cash Return</span>
+            <span class="glossary-term-tag">IRR</span>
+            <span class="glossary-term-tag">NOI</span>
+            <span class="glossary-term-tag">Deed of Trust</span>
+            <span class="glossary-term-tag">Title Insurance</span>
+            <span class="glossary-term-tag">Due Diligence</span>
+            <span class="glossary-term-tag">Hard Money</span>
+            <span class="glossary-term-tag">Subject To</span>
+            <span class="glossary-term-tag">+ 65 more</span>
+        </div>
+        <a href="education/glossary.html" class="btn-glossary">Explore Full Glossary</a>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Put This Knowledge to Work?</h2>
+        <p>Southern Cities Enterprises offers professional deal analysis, cost estimating, and investor services to help you execute faster and smarter.</p>
+        <div class="cta-buttons">
+            <a href="services.html" class="btn-primary">View Our Services</a>
+            <a href="contact.html" class="btn-secondary">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Southern Cities Enterprises. All rights reserved.</p>
+    </footer>
+
+    <!-- Load Header -->
+    <script src="load-header.js"></script>
+
+    <!-- Filter & Search Functionality -->
+    <script>
+        // Tab filtering
+        const tabs = document.querySelectorAll('.tab-btn');
+        const sections = document.querySelectorAll('.category-section');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                if (category === 'all') {
+                    sections.forEach(s => s.style.display = 'block');
+                } else {
+                    sections.forEach(s => {
+                        s.style.display = s.dataset.category === category ? 'block' : 'none';
+                    });
+                }
+            });
+        });
+
+        // Search functionality
+        const searchBar = document.getElementById('searchBar');
+        const articles = document.querySelectorAll('.article-card');
+        
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            articles.forEach(article => {
+                const title = article.querySelector('h3').textContent.toLowerCase();
+                const description = article.querySelector('p').textContent.toLowerCase();
+                const tag = article.querySelector('.article-tag').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm) || tag.includes(searchTerm)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            // Show all sections when searching
+            if (searchTerm) {
+                sections.forEach(s => s.style.display = 'block');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

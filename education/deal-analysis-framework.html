@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Deal Analysis Framework | Southern Cities Enterprises</title>
+    <meta name="description" content="Master real estate deal analysis with this comprehensive framework. Learn ARV calculation, repair estimation, cash flow analysis, and key ROI metrics from a licensed GC with Masters in Real Estate Finance.">
+    <meta name="keywords" content="deal analysis real estate, ARV calculation, cap rate, cash on cash return, real estate investment analysis, 70% rule, 1% rule">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.8;
+            background: var(--light-bg);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .breadcrumbs {
+            background: white;
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumb-container {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .breadcrumb-container a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 4rem 5% 3rem;
+            text-align: center;
+        }
+
+        .article-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--orange);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content h4 {
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .article-content strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .formula-box {
+            background: var(--light-bg);
+            border: 2px solid var(--orange);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .formula-box h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .formula {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--navy);
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+        }
+
+        .example-box {
+            background: white;
+            border: 2px solid var(--navy);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .example-box h4 {
+            margin-top: 0;
+            color: var(--navy);
+        }
+
+        .example-box table {
+            width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+        }
+
+        .example-box td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .example-box td:first-child {
+            font-weight: 600;
+        }
+
+        .example-box td:last-child {
+            text-align: right;
+        }
+
+        .callout-box {
+            background: var(--light-bg);
+            border-left: 4px solid var(--orange);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .callout-box h4 {
+            margin-top: 0;
+            color: var(--orange);
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box h4 {
+            margin-top: 0;
+            color: #856404;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .metric-card h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .metric-card p {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .metric-stat {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid var(--orange);
+        }
+
+        .metric-stat h4 {
+            font-size: 2rem;
+            color: var(--orange);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .metric-stat p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .checklist-download {
+            background: var(--orange);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .checklist-download h3 {
+            margin-bottom: 1rem;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--orange);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-download:hover {
+            background: var(--navy);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .related-articles {
+            background: var(--light-bg);
+            padding: 3rem 5%;
+        }
+
+        .related-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .related-container h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-left-color: var(--orange);
+        }
+
+        .related-card h3 {
+            color: var(--navy);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .article-cta {
+            background: var(--navy);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .article-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--orange);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            background: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .back-to-hub {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .back-to-hub a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <nav class="breadcrumbs">
+        <div class="breadcrumb-container">
+            <a href="../index.html">Home</a> / <a href="../education.html">Education Hub</a> / Complete Deal Analysis Framework
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">FRAMEWORK</span>
+        <h1>Complete Deal Analysis Framework</h1>
+        <div class="article-meta">
+            <span>📖 18 min read</span>
+            <span>📝 2,500+ words</span>
+            <span>👤 By Darius Walton</span>
+        </div>
+    </header>
+
+    <article class="article-content">
+        <p><strong>Here's the reality:</strong> 90% of new investors skip proper deal analysis and end up underwater. They fall in love with a property, trust the seller's numbers, or rely on "gut feel." Then they wonder why their cash flow is negative and they can't refinance.</p>
+
+        <p>Deal analysis isn't optional. It's the difference between building wealth and funding someone else's retirement.</p>
+
+        <p>This guide walks through the exact framework I use to evaluate every property—from ARV calculation to cash flow projections to ROI metrics. Use it, customize it, but most importantly: actually run the numbers before you write a check.</p>
+
+        <h2>The Deal Analysis Process (High-Level)</h2>
+
+        <p>Every analysis follows the same structure:</p>
+
+        <ol>
+            <li><strong>Determine After Repair Value (ARV)</strong> — What's it worth fixed up?</li>
+            <li><strong>Estimate Repair Costs</strong> — What does it cost to get there?</li>
+            <li><strong>Calculate Maximum Allowable Offer (MAO)</strong> — What's the most you can pay?</li>
+            <li><strong>Project Operating Income & Expenses</strong> — What's the cash flow?</li>
+            <li><strong>Calculate ROI Metrics</strong> — Does this meet your investment criteria?</li>
+            <li><strong>Stress Test</strong> — What if things go wrong?</li>
+        </ol>
+
+        <p>Let's break down each step.</p>
+
+        <h2>Step 1: Determining After Repair Value (ARV)</h2>
+
+        <p>ARV is what the property will be worth after renovations. This isn't a guess—it's data-driven.</p>
+
+        <h3>How to Calculate ARV</h3>
+
+        <h4>Method 1: Comparable Sales (Most Common)</h4>
+        <ol>
+            <li><strong>Pull recently sold comps</strong> (last 3-6 months)
+                <ul>
+                    <li>Same neighborhood (within 0.5 miles)</li>
+                    <li>Similar square footage (±15%)</li>
+                    <li>Same bed/bath count</li>
+                    <li>Similar condition (renovated)</li>
+                </ul>
+            </li>
+            <li><strong>Identify 3-5 strong comps</strong></li>
+            <li><strong>Calculate average price per square foot</strong></li>
+            <li><strong>Apply to your subject property</strong></li>
+        </ol>
+
+        <div class="example-box">
+            <h4>Example: ARV Calculation</h4>
+            <table>
+                <tr>
+                    <td>Comp 1 (123 Oak St)</td>
+                    <td>$185,000 / 1,200 SF = $154/SF</td>
+                </tr>
+                <tr>
+                    <td>Comp 2 (456 Elm Ave)</td>
+                    <td>$192,000 / 1,250 SF = $154/SF</td>
+                </tr>
+                <tr>
+                    <td>Comp 3 (789 Pine Dr)</td>
+                    <td>$198,000 / 1,300 SF = $152/SF</td>
+                </tr>
+                <tr>
+                    <td><strong>Average Price/SF</strong></td>
+                    <td><strong>$153/SF</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Subject Property (1,220 SF)</strong></td>
+                    <td><strong>$186,660 ARV</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <h4>Method 2: Agent/Appraiser Opinion</h4>
+        <p>Ask an agent for a "comparable market analysis" (CMA) or hire an appraiser for a desktop valuation. Cost: $0 (agent) or $150-300 (appraiser).</p>
+
+        <div class="callout-box">
+            <h4>💡 Pro Tip: Be Conservative</h4>
+            <p>If comps range from $150-160/SF, use the lower end ($150). Better to underestimate ARV and be pleasantly surprised than overestimate and lose money.</p>
+        </div>
+
+        <h3>Common ARV Mistakes</h3>
+        <ul>
+            <li><strong>Using list prices instead of sold prices</strong> — Sellers can list at any price; sales reflect reality</li>
+            <li><strong>Cherry-picking comps</strong> — Don't ignore lower sales just because you want a higher ARV</li>
+            <li><strong>Ignoring market trends</strong> — Declining market? Factor in 3-5% depreciation</li>
+            <li><strong>Comparing apples to oranges</strong> — A 1,500 SF house with a pool ≠ your 1,200 SF teardown</li>
+        </ul>
+
+        <h2>Step 2: Estimating Repair Costs</h2>
+
+        <p>This is where most investors blow it. Underestimate repairs by 20%, and your "great deal" becomes a money pit.</p>
+
+        <h3>How to Estimate Repairs</h3>
+
+        <h4>Option 1: Contractor Walkthrough (Most Accurate)</h4>
+        <p>Bring a licensed contractor to the property. Get a written estimate. Budget an extra 15-20% contingency.</p>
+
+        <h4>Option 2: Per-Square-Foot Method (Quick Estimate)</h4>
+        <ul>
+            <li><strong>Light cosmetic:</strong> $15-25/SF (paint, flooring, fixtures)</li>
+            <li><strong>Moderate rehab:</strong> $25-40/SF (kitchen, bath updates, some structural)</li>
+            <li><strong>Heavy rehab:</strong> $40-60/SF (full gut, roof, HVAC, foundation)</li>
+            <li><strong>Complete rebuild:</strong> $60-100+/SF</li>
+        </ul>
+
+        <div class="example-box">
+            <h4>Example: Repair Estimate (1,220 SF House)</h4>
+            <table>
+                <tr>
+                    <td>Kitchen remodel</td>
+                    <td>$12,000</td>
+                </tr>
+                <tr>
+                    <td>2 Bathroom updates</td>
+                    <td>$8,000</td>
+                </tr>
+                <tr>
+                    <td>Flooring (LVP throughout)</td>
+                    <td>$4,500</td>
+                </tr>
+                <tr>
+                    <td>Interior paint</td>
+                    <td>$3,000</td>
+                </tr>
+                <tr>
+                    <td>New HVAC system</td>
+                    <td>$6,500</td>
+                </tr>
+                <tr>
+                    <td>Exterior paint</td>
+                    <td>$2,500</td>
+                </tr>
+                <tr>
+                    <td>Landscaping</td>
+                    <td>$1,500</td>
+                </tr>
+                <tr>
+                    <td>Electrical/plumbing repairs</td>
+                    <td>$2,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Subtotal</strong></td>
+                    <td><strong>$40,000</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Contingency (20%)</strong></td>
+                    <td><strong>$8,000</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Total Repair Budget</strong></td>
+                    <td><strong>$48,000</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="warning-box">
+            <h4>⚠️ Hidden Cost Traps</h4>
+            <p><strong>Always budget for:</strong></p>
+            <ul>
+                <li>Permit fees (if required)</li>
+                <li>Dumpsters and waste removal</li>
+                <li>Utilities during renovation</li>
+                <li>Holding costs (mortgage, taxes, insurance)</li>
+                <li>Unexpected structural issues (once walls are open)</li>
+            </ul>
+        </div>
+
+        <h2>Step 3: Maximum Allowable Offer (MAO)</h2>
+
+        <p>Now that you know ARV and repair costs, calculate the most you can pay and still hit your profit target.</p>
+
+        <div class="formula-box">
+            <h4>The 70% Rule (Fix-and-Flip)</h4>
+            <div class="formula">MAO = (ARV × 0.70) - Repairs</div>
+            <p style="margin-top: 1rem;">This ensures a 30% margin for profit, holding costs, financing, and unexpected issues.</p>
+        </div>
+
+        <div class="example-box">
+            <h4>Example: MAO Calculation</h4>
+            <table>
+                <tr>
+                    <td>ARV</td>
+                    <td>$186,660</td>
+                </tr>
+                <tr>
+                    <td>× 70%</td>
+                    <td>$130,662</td>
+                </tr>
+                <tr>
+                    <td>- Repairs</td>
+                    <td>-$48,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Maximum Allowable Offer</strong></td>
+                    <td><strong>$82,662</strong></td>
+                </tr>
+            </table>
+            <p style="margin-top: 1rem;"><strong>If the seller wants $95,000?</strong> Walk away. The numbers don't work.</p>
+        </div>
+
+        <div class="callout-box">
+            <h4>💡 Adjusting the 70% Rule</h4>
+            <p><strong>Hot markets:</strong> May need to go to 75-80% and accept thinner margins<br>
+            <strong>Rental hold strategy:</strong> Less critical—focus on cash flow instead</p>
+        </div>
+
+        <h2>Step 4: Cash Flow Analysis (For Rentals)</h2>
+
+        <p>If you're holding the property as a rental, forget ARV. Focus on monthly cash flow.</p>
+
+        <h3>Rental Income Projection</h3>
+
+        <h4>How to Determine Market Rent</h4>
+        <ol>
+            <li><strong>Check Zillow, Apartments.com, Rentometer</strong> for comparable rentals</li>
+            <li><strong>Call property managers</strong> and ask what similar units rent for</li>
+            <li><strong>Drive the neighborhood</strong> and note "For Rent" signs with prices</li>
+        </ol>
+
+        <p><strong>Be realistic.</strong> If comps rent for $1,200-1,400, budget $1,200. Never assume top-of-market rents.</p>
+
+        <h3>Operating Expenses</h3>
+
+        <p>Don't just subtract the mortgage and call it cash flow. Here's what you actually pay:</p>
+
+        <div class="metric-card">
+            <h3>Operating Expense Categories</h3>
+            <ul style="color: white;">
+                <li><strong>Property taxes:</strong> Get exact figure from county assessor</li>
+                <li><strong>Insurance:</strong> Call for quotes (typically $800-1,500/year for SFH)</li>
+                <li><strong>Property management:</strong> 8-10% of gross rents (even if self-managing—budget for it)</li>
+                <li><strong>Maintenance & repairs:</strong> 10% of gross rents (ongoing)</li>
+                <li><strong>Vacancy:</strong> 5-8% of gross rents (even great tenants leave eventually)</li>
+                <li><strong>CapEx reserve:</strong> 5-10% for big-ticket items (roof, HVAC, water heater)</li>
+                <li><strong>HOA fees:</strong> If applicable</li>
+                <li><strong>Utilities:</strong> If owner-paid (water/sewer is common for multifamily)</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <h4>Example: Cash Flow Analysis</h4>
+            <table>
+                <tr>
+                    <td colspan="2"><strong>Income</strong></td>
+                </tr>
+                <tr>
+                    <td>Gross Rent</td>
+                    <td>$1,300/month</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Expenses</strong></td>
+                </tr>
+                <tr>
+                    <td>Mortgage (PITI)</td>
+                    <td>-$750</td>
+                </tr>
+                <tr>
+                    <td>Property Management (8%)</td>
+                    <td>-$104</td>
+                </tr>
+                <tr>
+                    <td>Maintenance (10%)</td>
+                    <td>-$130</td>
+                </tr>
+                <tr>
+                    <td>Vacancy (5%)</td>
+                    <td>-$65</td>
+                </tr>
+                <tr>
+                    <td>CapEx Reserve (8%)</td>
+                    <td>-$104</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly Cash Flow</strong></td>
+                    <td><strong>$147</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Annual Cash Flow</strong></td>
+                    <td><strong>$1,764</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>The 1% Rule (Quick Filter)</h3>
+
+        <div class="formula-box">
+            <h4>The 1% Rule</h4>
+            <div class="formula">Monthly Rent ≥ 1% of Purchase Price</div>
+            <p style="margin-top: 1rem;">Example: $100,000 property should rent for $1,000/month minimum</p>
+        </div>
+
+        <p><strong>Reality check:</strong> The 1% rule is increasingly hard to hit in hot markets. It's a screening tool, not a deal-killer. Focus on actual cash flow.</p>
+
+        <h2>Step 5: ROI Metrics (Does This Meet Your Criteria?)</h2>
+
+        <p>Cash flow is great, but how does this property perform relative to your investment? Three key metrics:</p>
+
+        <h3>1. Cash-on-Cash Return (CoC)</h3>
+
+        <div class="formula-box">
+            <h4>Cash-on-Cash Return</h4>
+            <div class="formula">CoC = Annual Cash Flow ÷ Total Cash Invested</div>
+        </div>
+
+        <div class="example-box">
+            <h4>Example Calculation</h4>
+            <table>
+                <tr>
+                    <td>Purchase Price</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <td>Down Payment (25%)</td>
+                    <td>$30,000</td>
+                </tr>
+                <tr>
+                    <td>Closing Costs</td>
+                    <td>$3,000</td>
+                </tr>
+                <tr>
+                    <td>Repairs</td>
+                    <td>$15,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Cash Invested</strong></td>
+                    <td><strong>$48,000</strong></td>
+                </tr>
+                <tr>
+                    <td>Annual Cash Flow</td>
+                    <td>$1,764</td>
+                </tr>
+                <tr>
+                    <td><strong>Cash-on-Cash Return</strong></td>
+                    <td><strong>3.7%</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <p><strong>Target CoC:</strong> 8-12% minimum for rental properties. Below that? You're better off in index funds.</p>
+
+        <h3>2. Cap Rate (Capitalization Rate)</h3>
+
+        <div class="formula-box">
+            <h4>Cap Rate</h4>
+            <div class="formula">Cap Rate = Net Operating Income (NOI) ÷ Property Value</div>
+            <p style="margin-top: 1rem;">NOI = Gross Rent - Operating Expenses (exclude mortgage)</p>
+        </div>
+
+        <p>Cap rate measures the property's return independent of financing. Useful for comparing properties across markets.</p>
+
+        <div class="metric-grid">
+            <div class="metric-stat">
+                <h4>4-6%</h4>
+                <p>Class A markets (stable, low growth)</p>
+            </div>
+            <div class="metric-stat">
+                <h4>6-8%</h4>
+                <p>Class B markets (moderate risk/return)</p>
+            </div>
+            <div class="metric-stat">
+                <h4>8-12%</h4>
+                <p>Class C/D markets (higher risk, higher return)</p>
+            </div>
+        </div>
+
+        <h3>3. Internal Rate of Return (IRR)</h3>
+
+        <p>IRR accounts for time value of money—cash flow over multiple years plus appreciation at exit. More complex, typically calculated in Excel or specialized software.</p>
+
+        <p><strong>When to use it:</strong> Syndications, multiyear holds, complex capital structures. Overkill for single-family buy-and-holds.</p>
+
+        <div class="callout-box">
+            <h4>💡 Which Metric Matters Most?</h4>
+            <p><strong>Buy-and-hold:</strong> Cash-on-Cash Return<br>
+            <strong>Comparing markets:</strong> Cap Rate<br>
+            <strong>Syndications/funds:</strong> IRR</p>
+        </div>
+
+        <h2>Step 6: Stress Testing Your Deal</h2>
+
+        <p>The numbers look good on paper. But what if things go wrong?</p>
+
+        <h3>Run These Scenarios</h3>
+
+        <h4>1. What if repairs run 30% over budget?</h4>
+        <p>Recalculate cash flow or flip profit. Still work? If not, negotiate a lower purchase price or walk.</p>
+
+        <h4>2. What if vacancy is 15% instead of 5%?</h4>
+        <p>Can you cover the mortgage for 2 months with reserves? If not, the deal is too tight.</p>
+
+        <h4>3. What if rent drops 10%?</h4>
+        <p>Economic downturn, oversupply, or tenant turnover can lower rents. Does your cash flow go negative?</p>
+
+        <h4>4. What if interest rates rise before refinancing?</h4>
+        <p>For BRRRR strategies, can you still pull your cash out if rates are 2% higher?</p>
+
+        <div class="warning-box">
+            <h4>⚠️ The Break-Even Test</h4>
+            <p>If your deal only works under perfect conditions, it's not a deal. Build in cushion. Markets change. Tenants suck sometimes. Contractors disappear. Your analysis should survive reality.</p>
+        </div>
+
+        <h2>Deal Analysis Checklist</h2>
+
+        <div class="checklist-download">
+            <h3>📥 Downloadable Deal Analysis Checklist</h3>
+            <p>We've compiled this entire framework into a one-page checklist you can print and use for every deal.</p>
+            <a href="../assets/deal-analysis-checklist.pdf" class="btn-download" download>Download Checklist (PDF)</a>
+        </div>
+
+        <div class="metric-card">
+            <h3>✅ Pre-Offer Checklist</h3>
+            <ul style="color: white;">
+                <li>ARV calculated using 3+ comparable sales</li>
+                <li>Repair estimate from licensed contractor (or conservative SF calculation)</li>
+                <li>MAO calculated (70% rule or custom)</li>
+                <li>Cash flow projection includes ALL expenses (not just mortgage)</li>
+                <li>Cash-on-Cash return meets minimum target (8-12%)</li>
+                <li>Stress-tested for 30% cost overrun and 15% vacancy</li>
+                <li>Exit strategy defined (flip, refinance, long-term hold)</li>
+                <li>Financing pre-approved or in place</li>
+            </ul>
+        </div>
+
+        <h2>Common Deal Analysis Mistakes</h2>
+
+        <h3>1. Emotional Attachment</h3>
+        <p>"This property has so much potential!" Yeah, and so does the lottery. Stick to the numbers.</p>
+
+        <h3>2. Trusting Seller-Provided Numbers</h3>
+        <p>Seller says rents are $1,500? Verify independently. Always.</p>
+
+        <h3>3. Ignoring Market Fundamentals</h3>
+        <p>Even a "good deal" in a declining market can lose money. Check population growth, job growth, crime trends.</p>
+
+        <h3>4. Underestimating Time</h3>
+        <p>Flips take longer than planned. Refinances get delayed. Cash flow doesn't start until the property is rented. Budget for time.</p>
+
+        <h3>5. Analyzing Too Many Properties, Offering on None</h3>
+        <p>Analysis paralysis is real. Set criteria, stick to it, make offers. You'll learn more from one closed deal than 100 analyzed.</p>
+
+        <h2>Final Thoughts</h2>
+
+        <p>Deal analysis isn't glamorous. It's spreadsheets, comps, contractor quotes, and conservative assumptions. But it's the difference between investors who build wealth and those who tell cautionary tales at meetups.</p>
+
+        <p>Run the numbers. Every time. No exceptions.</p>
+
+        <div class="callout-box">
+            <h4>Need Help?</h4>
+            <p>Southern Cities Enterprises offers professional deal analysis services. We'll run the numbers, provide repair estimates, and give you a go/no-go recommendation within 48 hours. <a href="../services.html" style="color: var(--orange); font-weight: 600;">Learn more →</a></p>
+        </div>
+    </article>
+
+    <section class="related-articles">
+        <div class="related-container">
+            <h2>Related Articles</h2>
+            <div class="related-grid">
+                <a href="9-5-investing.html" class="related-card">
+                    <h3>How to Invest in Real Estate with a 9-5 Job</h3>
+                    <p>Build a portfolio while working full-time with strategic time management.</p>
+                </a>
+                <a href="property-classes.html" class="related-card">
+                    <h3>Understanding Property Classes (A, B, C, D)</h3>
+                    <p>Which property class fits your investment strategy and risk tolerance?</p>
+                </a>
+                <a href="financing-and-lenders.html" class="related-card">
+                    <h3>Working with Lenders & Getting Financing</h3>
+                    <p>Understand financing options and how to structure deals for maximum returns.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-cta">
+        <h2>Want Us to Analyze Your Deal?</h2>
+        <p>We provide professional deal analysis, repair estimates, and investment recommendations within 48 hours.</p>
+        <a href="../services.html" class="btn-cta">View Analysis Services</a>
+    </section>
+
+    <div class="back-to-hub">
+        <a href="../education.html">← Back to Education Hub</a>
+    </div>
+
+    <script src="../load-header.js"></script>
+</body>
+</html>
