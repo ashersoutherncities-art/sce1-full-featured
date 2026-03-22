@@ -104,15 +104,22 @@
         align-items: center;
         gap: 0.4rem;
         cursor: pointer;
+        position: relative;
     }
 
     .dropdown-toggle::after {
         content: '▾';
         font-size: 12px;
         transition: transform 0.3s ease;
+        display: inline-block;
     }
 
     .nav-item.has-dropdown:hover .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+    
+    /* Mobile dropdown arrow rotation */
+    .nav-item.has-dropdown.mobile-open .dropdown-toggle::after {
         transform: rotate(180deg);
     }
 
@@ -251,6 +258,14 @@
 
         .nav-link {
             padding: 1rem 2rem;
+            width: 100%;
+        }
+        
+        /* Override desktop dropdown hover behavior on mobile */
+        .nav-item.has-dropdown:hover .dropdown-menu {
+            max-height: 0;
+            opacity: 1;
+            visibility: visible;
         }
 
         .dropdown-menu {
@@ -262,23 +277,42 @@
             margin-top: 0;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.05);
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                        background-color 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 0;
         }
 
         .nav-item.has-dropdown.mobile-open .dropdown-menu {
             max-height: 500px;
+            background-color: rgba(255, 255, 255, 0.08);
         }
 
         .dropdown-menu a {
             color: #ffffff;
-            padding: 0.75rem 2rem;
-            border-left: none;
+            padding: 0.875rem 2.5rem;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
         }
 
-        .dropdown-menu a:hover {
-            background-color: rgba(250, 140, 65, 0.2);
-            padding-left: 2rem;
+        .dropdown-menu a:hover,
+        .dropdown-menu a:active {
+            background-color: rgba(250, 140, 65, 0.25);
+            border-left-color: #fa8c41;
+            padding-left: 2.75rem;
+        }
+        
+        /* Make dropdown toggle more tappable on mobile */
+        .nav-item.has-dropdown .dropdown-toggle {
+            width: 100%;
+            justify-content: center;
+            padding: 1rem 2rem;
+            -webkit-tap-highlight-color: rgba(250, 140, 65, 0.2);
+        }
+        
+        /* Visual feedback on tap */
+        .nav-item.has-dropdown .dropdown-toggle:active {
+            background-color: rgba(250, 140, 65, 0.1);
         }
 
         .cta-button {
@@ -376,13 +410,32 @@
         if (dropdown) {
             const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
             if (dropdownToggle) {
-                dropdownToggle.addEventListener('click', function(e) {
+                // Use both click and touch for better mobile support
+                const toggleDropdown = function(e) {
                     // Only toggle on mobile (viewport check)
                     if (window.innerWidth <= 968) {
                         e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Close other dropdown
+                        const otherDropdown = dropdown === companyDropdown ? resourcesDropdown : companyDropdown;
+                        if (otherDropdown) {
+                            otherDropdown.classList.remove('mobile-open');
+                        }
+                        
+                        // Toggle this dropdown
                         dropdown.classList.toggle('mobile-open');
                     }
-                });
+                };
+                
+                dropdownToggle.addEventListener('click', toggleDropdown);
+                dropdownToggle.addEventListener('touchstart', function(e) {
+                    if (window.innerWidth <= 968) {
+                        // Prevent ghost clicks
+                        dropdownToggle._touchHandled = true;
+                        setTimeout(() => delete dropdownToggle._touchHandled, 500);
+                    }
+                }, { passive: true });
             }
         }
     });
