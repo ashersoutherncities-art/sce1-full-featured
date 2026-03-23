@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services & Pricing | Southern Cities Enterprises</title>
-    <meta name="description" content="Professional real estate services: Deal Analysis, Cost Estimating, and Investor Lead Generation.">
+    <meta name="description" content="Premium investment services: Deal Flow Access, Full Analysis Packages, and Turnkey Execution for real estate investors.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -163,13 +163,14 @@
         /* Pricing Cards */
         .pricing-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 2.5rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             position: relative;
+            border: 2px solid transparent;
         }
 
         .pricing-card::before {
@@ -178,79 +179,146 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: var(--orange);
-            border-radius: 12px 12px 0 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--orange) 0%, var(--navy) 100%);
+            border-radius: 16px 16px 0 0;
         }
 
         .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            border-color: var(--orange);
+        }
+
+        /* Popular Tier Styling */
+        .pricing-card.popular-tier {
+            border: 2px solid var(--orange);
+            transform: scale(1.05);
+            box-shadow: 0 8px 35px rgba(250, 140, 65, 0.2);
+        }
+
+        .pricing-card.popular-tier::before {
+            height: 6px;
+            background: var(--orange);
+        }
+
+        .pricing-card.popular-tier:hover {
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 16px 50px rgba(250, 140, 65, 0.3);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--orange) 0%, #ff9a56 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(250, 140, 65, 0.4);
         }
 
         .tier-name {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--navy);
             margin-bottom: 0.5rem;
             font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .tier-subtitle {
+            font-style: italic;
+            opacity: 0.8;
         }
 
         .tier-price {
-            font-size: 3rem;
-            color: var(--orange);
+            font-size: 3.5rem;
+            color: var(--navy);
             font-weight: 800;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            letter-spacing: -2px;
+            line-height: 1;
         }
 
         .tier-price small {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--gray);
-            font-weight: 400;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .popular-tier .tier-price {
+            color: var(--orange);
         }
 
         .tier-features {
             list-style: none;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             flex-grow: 1;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(19, 36, 82, 0.1);
         }
 
         .tier-features li {
-            padding: 0.75rem 0;
+            padding: 0.85rem 0;
             color: var(--navy);
             font-size: 0.95rem;
             display: flex;
             align-items: flex-start;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-weight: 500;
         }
 
         .tier-features li::before {
             content: "✓";
             color: var(--orange);
-            font-weight: 700;
-            margin-right: 0.75rem;
-            font-size: 1.2rem;
+            font-weight: 800;
+            margin-right: 1rem;
+            font-size: 1.3rem;
             flex-shrink: 0;
+            background: linear-gradient(135deg, var(--orange) 0%, #ff9a56 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .btn-add-cart {
-            background: var(--orange);
+            background: linear-gradient(135deg, var(--orange) 0%, #ff9a56 100%);
             color: white;
             border: none;
-            padding: 1.2rem 2rem;
+            padding: 1.3rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            font-size: 1.1rem;
-            margin-top: 1rem;
+            font-size: 1.05rem;
+            margin-top: 1.5rem;
             font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(250, 140, 65, 0.3);
         }
 
         .btn-add-cart:hover {
-            background: var(--navy);
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(19, 36, 82, 0.3);
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(19, 36, 82, 0.4);
+        }
+
+        .popular-tier .btn-add-cart {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f6b 100%);
+            box-shadow: 0 4px 20px rgba(19, 36, 82, 0.4);
+        }
+
+        .popular-tier .btn-add-cart:hover {
+            background: linear-gradient(135deg, var(--orange) 0%, #ff9a56 100%);
+            box-shadow: 0 6px 25px rgba(250, 140, 65, 0.5);
         }
 
         /* Cart Sidebar */
@@ -414,6 +482,19 @@
             .tier-price {
                 font-size: 2.5rem;
             }
+
+            .popular-badge {
+                font-size: 0.7rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .pricing-card.popular-tier {
+                transform: scale(1);
+            }
+
+            .pricing-card.popular-tier:hover {
+                transform: translateY(-5px);
+            }
         }
     </style>
 </head>
@@ -424,8 +505,8 @@
 
     <!-- Hero -->
     <section class="hero">
-        <h1>Professional Real Estate Services</h1>
-        <p>Select a service to view pricing tiers</p>
+        <h1>Premium Investment Services</h1>
+        <p>Deal flow, expert analysis, and turnkey execution for serious investors</p>
     </section>
 
     <!-- Button Bar -->
@@ -438,7 +519,7 @@
                 Cost Estimating
             </button>
             <button class="service-btn" onclick="showService('lead-generation')">
-                Lead Generation
+                Deal Flow
             </button>
         </div>
     </div>
@@ -544,51 +625,60 @@
             </div>
         </div>
 
-        <!-- Lead Generation Pricing -->
+        <!-- Deal Flow Pricing -->
         <div id="lead-generation" class="pricing-content">
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3 class="tier-name">Starter Package</h3>
-                    <div class="tier-price">$497<small>/month</small></div>
+                    <h3 class="tier-name">Bronze Tier</h3>
+                    <div class="tier-subtitle" style="color: var(--gray); font-size: 1rem; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif;">Deal Flow Access</div>
+                    <div class="tier-price">$297<small>/month</small></div>
                     <ul class="tier-features">
-                        <li>50 verified investor contacts</li>
-                        <li>Contact info (name, email, phone)</li>
-                        <li>Investment focus & criteria</li>
-                        <li>Geographic preferences</li>
-                        <li>CSV export</li>
+                        <li>Access to all sourced deals</li>
+                        <li>Basic property data (address, price, bed/bath)</li>
+                        <li>Email alerts when new deals arrive</li>
+                        <li>First look at opportunities in your market</li>
+                        <li>Deal dashboard access</li>
                     </ul>
-                    <button class="btn-add-cart" onclick="addToCart('Investor Leads - Starter (Monthly)', 497)">
-                        Subscribe Now
+                    <button class="btn-add-cart" onclick="addToCart('Deal Flow - Bronze Tier (Monthly)', 297)">
+                        Start Subscription
+                    </button>
+                </div>
+
+                <div class="pricing-card popular-tier">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3 class="tier-name">Gold Tier</h3>
+                    <div class="tier-subtitle" style="color: var(--gray); font-size: 1rem; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif;">Full Analysis Package</div>
+                    <div class="tier-price">$997<small>/deal</small></div>
+                    <ul class="tier-features">
+                        <li>Everything in Bronze Tier</li>
+                        <li>Complete deal analysis (ARV, rehab estimate, profit projections)</li>
+                        <li>Comparable sales research</li>
+                        <li>Multiple exit strategy recommendations</li>
+                        <li>Risk assessment & mitigation strategies</li>
+                        <li>Financing recommendations</li>
+                        <li>Market trend analysis</li>
+                    </ul>
+                    <button class="btn-add-cart" onclick="addToCart('Deal Flow - Gold Tier (Per Deal)', 997)">
+                        Get Analysis
                     </button>
                 </div>
 
                 <div class="pricing-card">
-                    <h3 class="tier-name">Growth Package</h3>
-                    <div class="tier-price">$697<small>/month</small></div>
+                    <h3 class="tier-name">Platinum Tier</h3>
+                    <div class="tier-subtitle" style="color: var(--gray); font-size: 1rem; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif;">Turnkey Execution</div>
+                    <div class="tier-price">Custom<small> quote</small></div>
                     <ul class="tier-features">
-                        <li>100 verified investor contacts</li>
-                        <li>Everything in Starter</li>
-                        <li>Deal size preferences</li>
-                        <li>Past investment history</li>
-                        <li>Weekly delivery</li>
+                        <li>Everything in Gold Tier</li>
+                        <li>We manage the entire rehab process</li>
+                        <li>Contractor coordination & scheduling</li>
+                        <li>Quality control & inspections</li>
+                        <li>Project timeline management</li>
+                        <li>Weekly progress reports</li>
+                        <li>Budget tracking & financial oversight</li>
+                        <li>Dedicated project manager</li>
                     </ul>
-                    <button class="btn-add-cart" onclick="addToCart('Investor Leads - Growth (Monthly)', 697)">
-                        Subscribe Now
-                    </button>
-                </div>
-
-                <div class="pricing-card">
-                    <h3 class="tier-name">Pro Package</h3>
-                    <div class="tier-price">$997<small>/month</small></div>
-                    <ul class="tier-features">
-                        <li>200 verified investor contacts</li>
-                        <li>Everything in Growth</li>
-                        <li>Email outreach templates</li>
-                        <li>Call scripts</li>
-                        <li>CRM import-ready formatting</li>
-                    </ul>
-                    <button class="btn-add-cart" onclick="addToCart('Investor Leads - Pro (Monthly)', 997)">
-                        Subscribe Now
+                    <button class="btn-add-cart" onclick="window.location.href='contact.html?service=platinum-tier'">
+                        Request Quote
                     </button>
                 </div>
             </div>
