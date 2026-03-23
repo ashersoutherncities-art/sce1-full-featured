@@ -1,11 +1,11 @@
-// Load the global header component with proper mobile dropdown support
-fetch('header.html')
+// Load the desktop-enhanced global header with sticky shrinking nav support
+fetch('header-desktop-enhanced.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('header-placeholder').innerHTML = html;
         
         // NOW initialize the mobile navigation AFTER DOM is loaded
-        console.log('🔧 Initializing mobile navigation...');
+        console.log('🔧 Initializing enhanced navigation...');
         
         // Get all the elements
         const mobileToggle = document.getElementById('mobileToggle');
@@ -87,7 +87,8 @@ fetch('header.html')
             const linkPage = link.getAttribute('href');
             if (linkPage === currentPage || 
                 (currentPage === 'index.html' && linkPage === 'index.html') ||
-                (currentPage === '' && linkPage === 'index.html')) {
+                (currentPage === '' && linkPage === 'index.html') ||
+                (currentPage === 'index-desktop-enhanced.html' && linkPage === 'index.html')) {
                 link.classList.add('active');
             }
         });
@@ -128,6 +129,6 @@ fetch('header.html')
             }, 250);
         });
         
-        console.log('✅ Mobile navigation initialized successfully');
+        console.log('✅ Enhanced navigation initialized successfully');
     })
     .catch(error => console.error('❌ Error loading header:', error));

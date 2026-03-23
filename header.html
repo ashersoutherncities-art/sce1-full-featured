@@ -1,14 +1,18 @@
-<!-- SOUTHERN CITIES ENTERPRISES - GLOBAL HEADER -->
-<!-- Compact navigation with dropdown consolidation -->
+<!-- SOUTHERN CITIES ENTERPRISES - DESKTOP ENHANCED HEADER -->
+<!-- DESKTOP ENHANCEMENT #4: STICKY SHRINKING NAV -->
 
 <style>
-    /* Header Styles */
+    /* Header Styles with Shrinking Sticky Nav */
     .site-header {
         background-color: #132452;
         position: sticky;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .site-header.scrolled {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .header-container {
@@ -19,9 +23,14 @@
         grid-template-columns: auto 1fr auto;
         align-items: center;
         height: 80px;
+        transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Logo */
+    .site-header.scrolled .header-container {
+        height: 60px;
+    }
+
+    /* Logo with Smooth Scaling */
     .header-logo {
         display: flex;
         align-items: center;
@@ -31,7 +40,11 @@
     .header-logo img {
         height: 50px;
         width: auto;
-        transition: transform 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .site-header.scrolled .header-logo img {
+        height: 40px;
     }
 
     .header-logo:hover img {
@@ -241,10 +254,18 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
+        .site-header.scrolled .header-nav {
+            top: 60px;
+        }
+
         .header-nav.active {
             max-height: calc(100vh - 80px);
             opacity: 1;
             overflow-y: auto;
+        }
+
+        .site-header.scrolled .header-nav.active {
+            max-height: calc(100vh - 60px);
         }
 
         .nav-menu {
@@ -334,8 +355,16 @@
             height: 70px;
         }
 
+        .site-header.scrolled .header-container {
+            height: 60px;
+        }
+
         .header-logo img {
             height: 40px;
+        }
+
+        .site-header.scrolled .header-logo img {
+            height: 35px;
         }
         
         .cta-button {
@@ -353,6 +382,10 @@
             padding: 0 1rem;
             position: relative;
             height: 70px;
+        }
+
+        .site-header.scrolled .header-container {
+            height: 60px;
         }
         
         .header-logo {
@@ -377,6 +410,10 @@
             left: 0;
             right: 0;
         }
+
+        .site-header.scrolled .header-nav {
+            top: 60px;
+        }
         
         .nav-cta-wrapper {
             flex-shrink: 0;
@@ -393,7 +430,7 @@
     }
 </style>
 
-<header class="site-header">
+<header class="site-header" id="siteHeader">
     <div class="header-container">
         <!-- Logo -->
         <a href="index.html" class="header-logo">
@@ -447,4 +484,4 @@
     </div>
 </header>
 
-<!-- JavaScript is now loaded by load-header.js after DOM insertion -->
+<!-- JavaScript is now loaded by load-header-enhanced.js after DOM insertion -->
