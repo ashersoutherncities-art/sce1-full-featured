@@ -1,5 +1,5 @@
 // Load the desktop-enhanced global header with sticky shrinking nav support
-fetch('header-desktop-enhanced.html')
+fetch('header.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('header-placeholder').innerHTML = html;
