@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Project Manager | Southern Cities Enterprises</title>
+    <meta name="description" content="Streamline your construction projects with our AI-powered project management tool. Photo analysis, cost estimation, vendor matching, and automated bid generation.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --navy: #132452;
+            --orange: #fa8c41;
+            --red: #E63A27;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #6F6E77;
+            --light-bg: #F6F6FF;
+        }
+
+        /* ===== GLOBAL RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #132452 0%, #0a1a3f 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 120px 5% 80px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--orange);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--orange);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--orange);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(250, 140, 65, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--white);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            padding: 80px 5%;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(250, 140, 65, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ===== HOW IT WORKS SECTION ===== */
+        .how-it-works {
+            padding: 80px 5%;
+            background-color: var(--light-bg);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--orange), var(--red));
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .step p {
+            color: var(--gray);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--orange), var(--red));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn-secondary {
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .cta .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--orange);
+        }
+
+        /* ===== STATUS BANNER ===== */
+        .status-banner {
+            background: linear-gradient(135deg, rgba(19, 36, 82, 0.95) 0%, rgba(10, 26, 63, 0.95) 100%);
+            color: var(--white);
+            padding: 1.5rem 5%;
+            text-align: center;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        .status-banner p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .status-banner strong {
+            color: var(--orange);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer a {
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Status Banner -->
+    <div class="status-banner">
+        <p>✅ <strong>Production Environment</strong> — This tool is now live and ready to use!</p>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Construction Project Manager</h1>
+        <p class="subtitle">Streamline your construction projects with AI-powered tools. From photo analysis to bid generation, manage everything in one place.</p>
+        <div class="hero-buttons">
+            <a href="https://sce-construction-manager.vercel.app" class="btn-primary" target="_blank">Launch Project Manager</a>
+            <a href="#how-it-works" class="btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2>Powerful Features</h2>
+            <p>Everything you need to manage construction projects efficiently</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3>Project Intake</h3>
+                <p>Capture client information, property details, and project requirements with automatic Google Sheets integration.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Photo Analysis</h3>
+                <p>Upload property photos and get AI-generated scope of work with ARV analysis and cost estimates.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Cost Estimator</h3>
+                <p>Convert scope of work into detailed bid sheets with labor, materials, and timeline estimates.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>Bid Generation</h3>
+                <p>Create professional branded bid sheets with cover letters and PDF export.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3>Vendor Matching</h3>
+                <p>Intelligent vendor recommendations by trade, location, and budget with reliability scoring.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Project Dashboard</h3>
+                <p>Track all active jobs, monitor status, and manage budgets from a single dashboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Four simple steps to streamline your construction management</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Create Project</h3>
+                <p>Fill out the intake form with client and property details</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Upload Photos</h3>
+                <p>Let AI analyze property photos and generate scope of work</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Get Estimates</h3>
+                <p>Review detailed cost estimates and vendor recommendations</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Generate Bid</h3>
+                <p>Export professional bid sheet and send to client</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Ready to Get Started?</h2>
+        <p>Join the future of construction project management. Streamline your workflow and save hours on every project.</p>
+        <a href="https://sce-construction-manager.vercel.app" class="btn-secondary" target="_blank">Launch Project Manager</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Southern Cities Enterprises. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!-- Load Header -->
+    <script src="load-header.js"></script>
+</body>
+</html>
