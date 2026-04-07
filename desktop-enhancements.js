@@ -46,7 +46,12 @@ function initStatCounters() {
             
             const numberElement = element.querySelector('.stat-number');
             const target = parseInt(numberElement.dataset.target);
-            const duration = 2000; // 2 seconds
+            const prefix = numberElement.dataset.prefix || '';
+            const suffix = numberElement.dataset.suffix || '+';
+
+            if (isNaN(target)) return; // safety guard
+
+            const duration = 2000;
             const steps = 60;
             const increment = target / steps;
             const stepDuration = duration / steps;
@@ -61,12 +66,7 @@ function initStatCounters() {
                     clearInterval(counter);
                 }
                 
-                // Format with + suffix and handle millions
-                if (target >= 50 && target < 100) {
-                    numberElement.textContent = `$${Math.floor(current)}M+`;
-                } else {
-                    numberElement.textContent = `${Math.floor(current)}+`;
-                }
+                numberElement.textContent = `${prefix}${Math.floor(current)}${suffix}`;
             }, stepDuration);
         }, delay);
     });
