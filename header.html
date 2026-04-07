@@ -109,6 +109,19 @@
         background-color: #fa8c41;
     }
 
+    /* Don't override the dropdown arrow with the active underline */
+    .dropdown-toggle.active::after,
+    .nav-item.has-dropdown .dropdown-toggle::after {
+        content: '▾';
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+
     /* Dropdown */
     .nav-item.has-dropdown {
         position: relative;
