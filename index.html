@@ -405,9 +405,18 @@
 
         /* ===== DIVISIONS SECTION ===== */
         .divisions {
-            background-color: var(--white);
-            padding: 80px 5%;
+            background-color: #0d1c3d;
+            padding: 100px 5%;
             overflow: visible;
+        }
+
+        .divisions .section-header h1 {
+            color: white;
+            font-size: 2.8rem;
+        }
+
+        .divisions .section-header p {
+            color: rgba(255,255,255,0.7);
         }
 
         .section-header {
@@ -429,30 +438,33 @@
         }
 
         .division-cards {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            gap: 2rem;
             overflow: visible;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .division-card {
-            background-color: var(--white);
+            background: linear-gradient(145deg, #1a2f5e, #132452);
+            border: 1px solid rgba(250,140,65,0.2);
             padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            
             overflow: visible;
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .division-card:hover {
-            transform: translateY(-10px) scale(1.01);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            border-color: rgba(250,140,65,0.6);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.4);
         }
 
         .division-icon {
@@ -485,39 +497,71 @@
 
         .division-card h3 {
             color: var(--orange);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
         }
 
         .division-card h2 {
-            color: var(--navy);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
         }
 
         .division-card p {
-            color: var(--gray);
-            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.25rem;
             line-height: 1.8;
+            flex-grow: 1;
         }
 
         .division-card ul {
             list-style: none;
             padding-left: 0;
+            margin-bottom: 2rem;
         }
 
         .division-card ul li {
-            color: var(--navy);
-            padding: 0.5rem 0;
+            color: rgba(255,255,255,0.85);
+            padding: 0.4rem 0;
             font-weight: 500;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
         }
 
         .division-card ul li:before {
-            content: "✓ ";
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--orange);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            vertical-align: middle;
+        }
+
+        .division-btn {
+            display: inline-block;
+            margin-top: auto;
+            padding: 0.875rem 2rem;
+            background: var(--orange);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid var(--orange);
+        }
+
+        .division-btn:hover {
+            background: transparent;
             color: var(--orange);
-            font-weight: bold;
-            margin-right: 0.5rem;
         }
 
         /* ===== FOOTER (LIGHT BACKGROUND) ===== */
@@ -786,94 +830,77 @@
     <section class="divisions" id="divisions">
         <div class="section-header scroll-animate">
             <h1>SOUTHERN CITIES ENTERPRISE DIVISIONS</h1>
-            <div class="divider"></div>
+            <p style="color:rgba(255,255,255,0.65); max-width:600px; margin:1rem auto 0; font-size:1.05rem;">Four vertically integrated divisions working together to acquire, build, sell, and develop real estate across the Southeast.</p>
+            <div class="divider" style="margin-top:1.5rem;"></div>
         </div>
 
         <div class="division-cards">
             <!-- Construction Division -->
             <div class="division-card scroll-animate">
-                <div class="division-icon">
-                    <img src="./assets/images/construction-division-logo.svg" alt="Construction">
-                </div>
-                <h3>Our Construction Capabilities</h3>
+                <h3>General Contracting</h3>
                 <h2>Integrated Construction Solutions</h2>
                 <p>
-                    Southern Cities provides licensed general contracting services for residential, investment, and development 
-                    projects. Our team delivers renovations, additions, and structural work with clear scopes, disciplined 
-                    timelines, and hands-on oversight.
+                    Licensed general contracting for residential, investment, and development projects. Clear scopes, disciplined timelines, and hands-on oversight from start to finish.
                 </p>
                 <ul>
-                    <li>Full renovations & remodels</li>
-                    <li>Additions & expansions</li>
-                    <li>Structural & framing work</li>
+                    <li>Full renovations and remodels</li>
+                    <li>Additions and expansions</li>
+                    <li>Structural and framing work</li>
                     <li>Investor rehab projects</li>
                     <li>Pre-construction planning</li>
                 </ul>
+                <a href="general-contracting.html" class="division-btn">View Construction Services</a>
             </div>
 
             <!-- Brokerage Division -->
             <div class="division-card scroll-animate scroll-animate-delay-1">
-                <div class="division-icon">
-                    <img src="./assets/images/brokerage-division-logo.svg" alt="Brokerage">
-                </div>
-                <h3>Brokerage Services Built for Value</h3>
-                <h2>Real Estate Brokerage Focused on Value</h2>
+                <h3>Real Estate Brokerage</h3>
+                <h2>Strategic Representation for Buyers and Sellers</h2>
                 <p>
-                    We provide professional real estate brokerage services focused on buying, selling, and value optimization. 
-                    We represent homeowners, investors, and partners using a strategy-driven approach designed to maximize outcomes.
+                    Professional brokerage services focused on value maximization. We represent homeowners, investors, and partners with a results-driven approach.
                 </p>
                 <ul>
                     <li>Buyer representation</li>
                     <li>Seller representation</li>
                     <li>Fix-Before-You-Sell strategies</li>
                     <li>Investor acquisition support</li>
-                    <li>Market analysis & pricing strategy</li>
+                    <li>Market analysis and pricing strategy</li>
                 </ul>
+                <a href="brokerage.html" class="division-btn">View Brokerage Services</a>
             </div>
 
             <!-- Investor Services Division -->
             <div class="division-card scroll-animate scroll-animate-delay-2">
-                <div class="division-icon">
-                    <img src="./assets/images/investor-division-logo.svg" alt="Investor Services">
-                </div>
-                <h3>Investor Services and Strategy</h3>
-                <h2>Integrated Support for Real Estate Investors</h2>
+                <h3>Acquisitions and Investor Services</h3>
+                <h2>End-to-End Support for Real Estate Investors</h2>
                 <p>
-                    Southern Cities supports real estate investors through construction coordination, brokerage representation, 
-                    and strategic guidance. Our investor services are designed to help clients evaluate opportunities, execute 
-                    projects efficiently, and manage risk.
+                    Construction coordination, brokerage representation, and strategic guidance to help investors evaluate opportunities, execute projects, and manage risk.
                 </p>
                 <ul>
                     <li>Investor-focused construction support</li>
-                    <li>Investor brokerage representation</li>
-                    <li>Deal evaluation & strategy support</li>
+                    <li>Deal evaluation and strategy</li>
                     <li>BRRRR strategy guidance</li>
-                    <li>Partnerships & referrals</li>
+                    <li>Off-market deal sourcing</li>
+                    <li>Partnerships and referrals</li>
                 </ul>
-                <div style="margin-top: 1.5rem; text-align: center;">
-                    <a href="construction-manager.html" class="btn-primary" style="display: inline-block; padding: 0.875rem 2rem; background-color: #fa8c41; color: white; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Manage Your Projects</a>
-                </div>
+                <a href="acquisitions.html" class="division-btn">View Investor Services</a>
             </div>
 
             <!-- Development Division -->
             <div class="division-card scroll-animate scroll-animate-delay-3">
-                <div class="division-icon">
-                    <img src="./assets/images/development-division-logo.svg" alt="Development">
-                </div>
-                <h3>Development and Partnerships</h3>
-                <h2>Strategic Real Estate Development</h2>
+                <h3>Real Estate Development</h3>
+                <h2>Strategic Ground-Up Development</h2>
                 <p>
-                    We develop residential and mixed-use projects through disciplined planning, strategic partnerships, and 
-                    hands-on execution. We collaborate with landowners, investors, and municipalities to evaluate feasibility 
-                    and deliver projects aligned with long-term market fundamentals.
+                    Residential and mixed-use projects through disciplined planning and strategic partnerships. We work with landowners, investors, and municipalities to deliver long-term value.
                 </p>
                 <ul>
-                    <li>Land acquisition & feasibility analysis</li>
+                    <li>Land acquisition and feasibility analysis</li>
                     <li>Ground-up residential development</li>
                     <li>Mixed-use projects</li>
                     <li>Joint venture partnerships</li>
-                    <li>Project oversight & execution</li>
+                    <li>Project oversight and execution</li>
                 </ul>
+                <a href="development.html" class="division-btn">View Development Services</a>
             </div>
         </div>
     </section>
