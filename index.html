@@ -329,6 +329,7 @@
         /* ===== DESKTOP ENHANCEMENT #5: SCROLL ANIMATIONS ===== */
         .scroll-animate {
             opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -915,6 +916,30 @@
     <script src="load-header.js"></script>
     <script src="desktop-enhancements.js"></script>
 
+<script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-animate, .stat-item, .feature-card, .division-card').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Also trigger for elements already in view on load
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.scroll-animate, .stat-item, .feature-card, .division-card').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('animate');
+            }
+        });
+    });
+</script>
 </body>
 </html>
 <!-- Desktop Enhanced Version - Sun Mar 22 19:45 EDT 2026 -->
