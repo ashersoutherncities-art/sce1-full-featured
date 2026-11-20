@@ -598,51 +598,11 @@
     <section class="contact-section" id="contact-sell">
         <div class="contact-container">
             <h2>List Your Property</h2>
-            <p>Get a free market analysis and listing strategy consultation.</p>
-            <form id="seller-form">
-                <div class="form-group">
-                    <label for="seller-name">Full Name *</label>
-                    <input type="text" id="seller-name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="seller-email">Email *</label>
-                    <input type="email" id="seller-email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="seller-phone">Phone *</label>
-                    <input type="tel" id="seller-phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="property-address">Property Address *</label>
-                    <input type="text" id="property-address" name="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="property-type">Property Type *</label>
-                    <select id="property-type" name="property-type" required>
-                        <option value="">Select property type</option>
-                        <option value="single-family">Single Family Home</option>
-                        <option value="condo">Condo/Townhome</option>
-                        <option value="multi-family">Multi-Family (2-4 units)</option>
-                        <option value="commercial">Commercial</option>
-                        <option value="land">Land/Vacant Lot</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="timeline">Selling Timeline *</label>
-                    <select id="timeline" name="timeline" required>
-                        <option value="">Select timeline</option>
-                        <option value="asap">As soon as possible</option>
-                        <option value="1-3months">1-3 months</option>
-                        <option value="3-6months">3-6 months</option>
-                        <option value="exploring">Just exploring</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="seller-message">Additional Details</label>
-                    <textarea id="seller-message" name="message" placeholder="Tell us about your property, goals, or any questions you have..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Request Free Market Analysis</button>
-            </form>
+            <p>Ask about a market analysis and listing strategy consultation.</p>
+            <div class="form-group">
+                <p>Online submission isn’t available on this page.</p>
+                <p>To discuss selling your property, call <a href="tel:2523396146" style="color: inherit; text-decoration: underline;">(252) 339-6146</a> or email <a href="mailto:info@southerncitiesconstruction.com" style="color: inherit; text-decoration: underline;">info@southerncitiesconstruction.com</a>.</p>
+            </div>
         </div>
     </section>
 
@@ -650,52 +610,11 @@
     <section class="contact-section" id="contact-buy">
         <div class="contact-container">
             <h2>Find Your Next Property</h2>
-            <p>Tell us what you're looking for and we'll create a custom property search.</p>
-            <form id="buyer-form">
-                <div class="form-group">
-                    <label for="buyer-name">Full Name *</label>
-                    <input type="text" id="buyer-name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="buyer-email">Email *</label>
-                    <input type="email" id="buyer-email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="buyer-phone">Phone *</label>
-                    <input type="tel" id="buyer-phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="buyer-type">I'm Looking For *</label>
-                    <select id="buyer-type" name="buyer-type" required>
-                        <option value="">Select property type</option>
-                        <option value="primary-residence">Primary Residence</option>
-                        <option value="investment-rental">Investment Property (Rental)</option>
-                        <option value="investment-flip">Investment Property (Flip)</option>
-                        <option value="commercial">Commercial Property</option>
-                        <option value="land-development">Land/Development</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="budget">Budget Range *</label>
-                    <select id="budget" name="budget" required>
-                        <option value="">Select budget</option>
-                        <option value="under-200k">Under $200,000</option>
-                        <option value="200k-400k">$200,000 - $400,000</option>
-                        <option value="400k-600k">$400,000 - $600,000</option>
-                        <option value="600k-1m">$600,000 - $1,000,000</option>
-                        <option value="over-1m">Over $1,000,000</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="areas">Preferred Areas</label>
-                    <input type="text" id="areas" name="areas" placeholder="e.g., Charlotte, Raleigh, Durham, NC">
-                </div>
-                <div class="form-group">
-                    <label for="buyer-message">Additional Requirements</label>
-                    <textarea id="buyer-message" name="message" placeholder="Tell us about your must-haves, deal-breakers, timeline, or any questions..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Start Property Search</button>
-            </form>
+            <p>Tell us what you’re looking for in your next property.</p>
+            <div class="form-group">
+                <p>Online submission isn’t available on this page.</p>
+                <p>To discuss buying a property, call <a href="tel:2523396146" style="color: inherit; text-decoration: underline;">(252) 339-6146</a> or email <a href="mailto:info@southerncitiesconstruction.com" style="color: inherit; text-decoration: underline;">info@southerncitiesconstruction.com</a>.</p>
+            </div>
         </div>
     </section>
 
@@ -705,42 +624,5 @@
         <p>Licensed Real Estate Brokerage | Charlotte, NC | <a href="tel:2523396146" style="color:rgba(255,255,255,0.9)">(252) 339-6146</a> | <a href="mailto:info@southerncitiesconstruction.com" style="color:rgba(255,255,255,0.9)">info@southerncitiesconstruction.com</a></p>
     </footer>
 
-    <script>
-        document.getElementById('seller-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = {
-                name: document.getElementById('seller-name').value,
-                email: document.getElementById('seller-email').value,
-                phone: document.getElementById('seller-phone').value,
-                address: document.getElementById('property-address').value,
-                propertyType: document.getElementById('property-type').value,
-                timeline: document.getElementById('timeline').value,
-                message: document.getElementById('seller-message').value,
-                formType: 'Seller',
-                page: 'Brokerage'
-            };
-            console.log('Seller form submitted:', formData);
-            alert('Thank you! We\'ll prepare a comprehensive market analysis and reach out within 24 hours.');
-            this.reset();
-        });
-
-        document.getElementById('buyer-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = {
-                name: document.getElementById('buyer-name').value,
-                email: document.getElementById('buyer-email').value,
-                phone: document.getElementById('buyer-phone').value,
-                buyerType: document.getElementById('buyer-type').value,
-                budget: document.getElementById('budget').value,
-                areas: document.getElementById('areas').value,
-                message: document.getElementById('buyer-message').value,
-                formType: 'Buyer',
-                page: 'Brokerage'
-            };
-            console.log('Buyer form submitted:', formData);
-            alert('Thank you! We\'ll set up your custom property search and send matching listings within 24 hours.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>

@@ -705,63 +705,11 @@
     <section class="contact-section" id="contact">
         <div class="contact-container">
             <h2>Discuss Your Project</h2>
-            <p>Tell us about your development opportunity and we'll provide a preliminary feasibility assessment.</p>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="project-type">Project Type *</label>
-                    <select id="project-type" name="project-type" required>
-                        <option value="">Select project type</option>
-                        <option value="ground-up-residential">Ground-Up Residential</option>
-                        <option value="ground-up-commercial">Ground-Up Commercial</option>
-                        <option value="rehab">Property Rehabilitation</option>
-                        <option value="land-development">Land Development</option>
-                        <option value="mixed-use">Mixed-Use Development</option>
-                        <option value="jv-partnership">JV/Partnership Opportunity</option>
-                        <option value="consulting">Development Consulting</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="site-address">Site Address (if applicable)</label>
-                    <input type="text" id="site-address" name="site-address">
-                </div>
-                <div class="form-group">
-                    <label for="project-size">Estimated Project Size *</label>
-                    <select id="project-size" name="project-size" required>
-                        <option value="">Select budget range</option>
-                        <option value="under-250k">Under $250,000</option>
-                        <option value="250k-500k">$250,000 - $500,000</option>
-                        <option value="500k-1m">$500,000 - $1,000,000</option>
-                        <option value="1m-3m">$1,000,000 - $3,000,000</option>
-                        <option value="over-3m">Over $3,000,000</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="timeline">Project Timeline *</label>
-                    <select id="timeline" name="timeline" required>
-                        <option value="">Select timeline</option>
-                        <option value="planning">Planning Phase (exploring)</option>
-                        <option value="3-6months">Ready to Start (3-6 months)</option>
-                        <option value="immediate">Immediate (site acquired, ready to build)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Project Details *</label>
-                    <textarea id="message" name="message" required placeholder="Tell us about your vision, site details, goals, or any specific requirements..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Request Feasibility Assessment</button>
-            </form>
+            <p>Tell us about your development opportunity.</p>
+            <div class="form-group">
+                <p>Online submission isn’t available on this page.</p>
+                <p>To discuss your development project, call <a href="tel:2523396146" style="color: inherit; text-decoration: underline;">(252) 339-6146</a> or email <a href="mailto:info@southerncitiesconstruction.com" style="color: inherit; text-decoration: underline;">info@southerncitiesconstruction.com</a>.</p>
+            </div>
         </div>
     </section>
 
@@ -771,27 +719,5 @@
         <p>Real Estate Development | Charlotte, NC | <a href="tel:2523396146" style="color:rgba(255,255,255,0.9)">(252) 339-6146</a> | <a href="mailto:info@southerncitiesconstruction.com" style="color:rgba(255,255,255,0.9)">info@southerncitiesconstruction.com</a></p>
     </footer>
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                projectType: document.getElementById('project-type').value,
-                siteAddress: document.getElementById('site-address').value,
-                projectSize: document.getElementById('project-size').value,
-                timeline: document.getElementById('timeline').value,
-                message: document.getElementById('message').value,
-                page: 'Development'
-            };
-            
-            console.log('Form submitted:', formData);
-            
-            alert('Thank you! We\'ll review your project details and provide a preliminary feasibility assessment within 48 hours.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>

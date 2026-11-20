@@ -673,57 +673,11 @@
     <section class="contact-section" id="contact">
         <div class="contact-container">
             <h2>Start Finding Deals</h2>
-            <p>Tell us your investment criteria and we'll match you with qualified opportunities.</p>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="experience">Investment Experience *</label>
-                    <select id="experience" name="experience" required>
-                        <option value="">Select your experience level</option>
-                        <option value="new">New Investor (0-2 deals)</option>
-                        <option value="active">Active Investor (3-10 deals/year)</option>
-                        <option value="experienced">Experienced (10+ deals/year)</option>
-                        <option value="professional">Full-Time Investor</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="strategy">Primary Strategy *</label>
-                    <select id="strategy" name="strategy" required>
-                        <option value="">Select investment strategy</option>
-                        <option value="flip">Fix & Flip</option>
-                        <option value="rental">Buy & Hold Rentals</option>
-                        <option value="development">Ground-Up Development</option>
-                        <option value="wholesale">Wholesaling</option>
-                        <option value="mixed">Mixed Strategy</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="budget">Acquisition Budget *</label>
-                    <select id="budget" name="budget" required>
-                        <option value="">Select budget range</option>
-                        <option value="under-100k">Under $100,000</option>
-                        <option value="100k-250k">$100,000 - $250,000</option>
-                        <option value="250k-500k">$250,000 - $500,000</option>
-                        <option value="over-500k">Over $500,000</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Additional Details</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your buy criteria, preferred locations, property types, or any specific requirements..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Start Receiving Deals</button>
-            </form>
+            <p>Tell us about your investment criteria.</p>
+            <div class="form-group">
+                <p>Online submission isn’t available on this page.</p>
+                <p>To discuss property acquisitions, call <a href="tel:2523396146" style="color: inherit; text-decoration: underline;">(252) 339-6146</a> or email <a href="mailto:info@southerncitiesconstruction.com" style="color: inherit; text-decoration: underline;">info@southerncitiesconstruction.com</a>.</p>
+            </div>
         </div>
     </section>
 
@@ -733,26 +687,5 @@
         <p>Strategic Property Acquisition | Charlotte, NC | <a href="tel:2523396146" style="color:rgba(255,255,255,0.9)">(252) 339-6146</a> | <a href="mailto:info@southerncitiesconstruction.com" style="color:rgba(255,255,255,0.9)">info@southerncitiesconstruction.com</a></p>
     </footer>
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                experience: document.getElementById('experience').value,
-                strategy: document.getElementById('strategy').value,
-                budget: document.getElementById('budget').value,
-                message: document.getElementById('message').value,
-                page: 'Acquisitions'
-            };
-            
-            console.log('Form submitted:', formData);
-            
-            alert('Thank you! We\'ll review your investment criteria and reach out within 24 hours to discuss the right subscription tier for you.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>

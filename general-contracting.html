@@ -698,8 +698,8 @@
                     <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 </div>
                 <div class="process-card">
-                    <h3>Submit Project</h3>
-                    <p>Fill out our digital intake form with your project details and requirements.</p>
+                    <h3>Share Your Project</h3>
+                    <p>Contact us to discuss your project details and requirements.</p>
                 </div>
             </div>
 
@@ -907,53 +907,11 @@
     <section class="contact-section" id="contact">
         <div class="contact-container">
             <h2>Get a Virtual Estimate</h2>
-            <p>Tell us about your project and we'll provide a detailed estimate within 48 hours.</p>
             <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Phone: <a href="tel:2523396146" style="color: var(--orange);">(252) 339-6146</a> | Email: <a href="mailto:info@southerncitiesconstruction.com" style="color: var(--orange);">info@southerncitiesconstruction.com</a> | Charlotte, NC</p>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="project-type">Project Type *</label>
-                    <select id="project-type" name="project-type" required>
-                        <option value="">Select project type</option>
-                        <option value="residential-rehab">Residential Rehab</option>
-                        <option value="new-construction">New Construction</option>
-                        <option value="commercial">Commercial</option>
-                        <option value="multi-project">Multiple Projects</option>
-                        <option value="estimating-only">Estimating Only</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="property-address">Property Address</label>
-                    <input type="text" id="property-address" name="property-address">
-                </div>
-                <div class="form-group">
-                    <label for="budget">Estimated Budget</label>
-                    <select id="budget" name="budget">
-                        <option value="">Select budget range</option>
-                        <option value="under-25k">Under $25,000</option>
-                        <option value="25k-50k">$25,000 - $50,000</option>
-                        <option value="50k-100k">$50,000 - $100,000</option>
-                        <option value="100k-200k">$100,000 - $200,000</option>
-                        <option value="over-200k">Over $200,000</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Project Details *</label>
-                    <textarea id="message" name="message" required placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Request Virtual Estimate</button>
-            </form>
+            <div class="form-group">
+                <p>Online submission isn’t available on this page.</p>
+                <p>To request a virtual estimate, call <a href="tel:2523396146" style="color: inherit; text-decoration: underline;">(252) 339-6146</a> or email <a href="mailto:info@southerncitiesconstruction.com" style="color: inherit; text-decoration: underline;">info@southerncitiesconstruction.com</a>.</p>
+            </div>
         </div>
     </section>
 
@@ -964,28 +922,5 @@
         <p>Licensed General Contractor | Charlotte, NC</p>
     </footer>
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                projectType: document.getElementById('project-type').value,
-                propertyAddress: document.getElementById('property-address').value,
-                budget: document.getElementById('budget').value,
-                message: document.getElementById('message').value,
-                page: 'General Contracting'
-            };
-            
-            // TODO: Integrate with GHL webhook or email service
-            console.log('Form submitted:', formData);
-            
-            alert('Thank you! We\'ll review your project details and send you a detailed estimate within 48 hours.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
